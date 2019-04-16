@@ -16,6 +16,7 @@
 		E14017F7226424F200A2F628 /* DebugQuicklyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E14017F6226424F200A2F628 /* DebugQuicklyTests.m */; };
 		E1401802226424F200A2F628 /* DebugQuicklyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1401801226424F200A2F628 /* DebugQuicklyUITests.m */; };
 		E14018112264647200A2F628 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = E14018102264647200A2F628 /* TestView.m */; };
+		E17317C022656A3000D2DE0E /* 链接成功.png in Resources */ = {isa = PBXBuildFile; fileRef = E17317BF22656A3000D2DE0E /* 链接成功.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E1401803226424F200A2F628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E140180F2264647200A2F628 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		E14018102264647200A2F628 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		E17317BF22656A3000D2DE0E /* 链接成功.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "链接成功.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		E14017DC226424EF00A2F628 /* DebugQuickly */ = {
 			isa = PBXGroup;
 			children = (
+				E17317BE22656A1000D2DE0E /* Reference */,
 				E14017DD226424EF00A2F628 /* AppDelegate.h */,
 				E14017DE226424EF00A2F628 /* AppDelegate.m */,
 				E14017E0226424EF00A2F628 /* ViewController.h */,
@@ -135,6 +138,14 @@
 				E1401803226424F200A2F628 /* Info.plist */,
 			);
 			path = DebugQuicklyUITests;
+			sourceTree = "<group>";
+		};
+		E17317BE22656A1000D2DE0E /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				E17317BF22656A3000D2DE0E /* 链接成功.png */,
+			);
+			path = Reference;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14017EA226424F200A2F628 /* LaunchScreen.storyboard in Resources */,
+				E17317C022656A3000D2DE0E /* 链接成功.png in Resources */,
 				E14017E7226424F200A2F628 /* Assets.xcassets in Resources */,
 				E14017E5226424EF00A2F628 /* Main.storyboard in Resources */,
 			);

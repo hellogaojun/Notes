@@ -1,0 +1,17 @@
+//
+//  GJKangJiaTV.h
+//  DesignPatternDemo
+//
+//  Created by gaojun on 2019/4/16.
+//  Copyright © 2019年 gaojun. All rights reserved.
+//
+
+#import "GJAbstractTV.h"
+
+NS_ASSUME_NONNULL_BEGIN
+///康佳TV
+@interface GJKangJiaTV : GJAbstractTV
+
+@end
+
+NS_ASSUME_NONNULL_END
