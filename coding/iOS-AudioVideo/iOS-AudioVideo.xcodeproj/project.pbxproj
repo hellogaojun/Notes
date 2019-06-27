@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E148A739229FAA1800EF2CDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E148A738229FAA1800EF2CDA /* AppDelegate.m */; };
+		E148A73C229FAA1800EF2CDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E148A73B229FAA1800EF2CDA /* ViewController.m */; };
+		E148A73F229FAA1800EF2CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E148A73D229FAA1800EF2CDA /* Main.storyboard */; };
+		E148A741229FAA1A00EF2CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E148A740229FAA1A00EF2CDA /* Assets.xcassets */; };
+		E148A744229FAA1A00EF2CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E148A742229FAA1A00EF2CDA /* LaunchScreen.storyboard */; };
+		E148A747229FAA1A00EF2CDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E148A746229FAA1A00EF2CDA /* main.m */; };
+		E148A751229FAA1A00EF2CDA /* iOS_AudioVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E148A750229FAA1A00EF2CDA /* iOS_AudioVideoTests.m */; };
+		E148A75C229FAA1A00EF2CDA /* iOS_AudioVideoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E148A75B229FAA1A00EF2CDA /* iOS_AudioVideoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E148A74D229FAA1A00EF2CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E148A72C229FAA1800EF2CDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E148A733229FAA1800EF2CDA;
+			remoteInfo = "iOS-AudioVideo";
+		};
+		E148A758229FAA1A00EF2CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E148A72C229FAA1800EF2CDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E148A733229FAA1800EF2CDA;
+			remoteInfo = "iOS-AudioVideo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E148A734229FAA1800EF2CDA /* iOS-AudioVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-AudioVideo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E148A737229FAA1800EF2CDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E148A738229FAA1800EF2CDA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E148A73A229FAA1800EF2CDA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E148A73B229FAA1800EF2CDA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E148A73E229FAA1800EF2CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E148A740229FAA1A00EF2CDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E148A743229FAA1A00EF2CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E148A745229FAA1A00EF2CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E148A746229FAA1A00EF2CDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E148A74C229FAA1A00EF2CDA /* iOS-AudioVideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-AudioVideoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E148A750229FAA1A00EF2CDA /* iOS_AudioVideoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_AudioVideoTests.m; sourceTree = "<group>"; };
+		E148A752229FAA1A00EF2CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E148A757229FAA1A00EF2CDA /* iOS-AudioVideoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-AudioVideoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E148A75B229FAA1A00EF2CDA /* iOS_AudioVideoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_AudioVideoUITests.m; sourceTree = "<group>"; };
+		E148A75D229FAA1A00EF2CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E148A731229FAA1800EF2CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E148A749229FAA1A00EF2CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E148A754229FAA1A00EF2CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E148A72B229FAA1800EF2CDA = {
+			isa = PBXGroup;
+			children = (
+				E148A736229FAA1800EF2CDA /* iOS-AudioVideo */,
+				E148A74F229FAA1A00EF2CDA /* iOS-AudioVideoTests */,
+				E148A75A229FAA1A00EF2CDA /* iOS-AudioVideoUITests */,
+				E148A735229FAA1800EF2CDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E148A735229FAA1800EF2CDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E148A734229FAA1800EF2CDA /* iOS-AudioVideo.app */,
+				E148A74C229FAA1A00EF2CDA /* iOS-AudioVideoTests.xctest */,
+				E148A757229FAA1A00EF2CDA /* iOS-AudioVideoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E148A736229FAA1800EF2CDA /* iOS-AudioVideo */ = {
+			isa = PBXGroup;
+			children = (
+				E148A737229FAA1800EF2CDA /* AppDelegate.h */,
+				E148A738229FAA1800EF2CDA /* AppDelegate.m */,
+				E148A73A229FAA1800EF2CDA /* ViewController.h */,
+				E148A73B229FAA1800EF2CDA /* ViewController.m */,
+				E148A73D229FAA1800EF2CDA /* Main.storyboard */,
+				E148A740229FAA1A00EF2CDA /* Assets.xcassets */,
+				E148A742229FAA1A00EF2CDA /* LaunchScreen.storyboard */,
+				E148A745229FAA1A00EF2CDA /* Info.plist */,
+				E148A746229FAA1A00EF2CDA /* main.m */,
+			);
+			path = "iOS-AudioVideo";
+			sourceTree = "<group>";
+		};
+		E148A74F229FAA1A00EF2CDA /* iOS-AudioVideoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E148A750229FAA1A00EF2CDA /* iOS_AudioVideoTests.m */,
+				E148A752229FAA1A00EF2CDA /* Info.plist */,
+			);
+			path = "iOS-AudioVideoTests";
+			sourceTree = "<group>";
+		};
+		E148A75A229FAA1A00EF2CDA /* iOS-AudioVideoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E148A75B229FAA1A00EF2CDA /* iOS_AudioVideoUITests.m */,
+				E148A75D229FAA1A00EF2CDA /* Info.plist */,
+			);
+			path = "iOS-AudioVideoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E148A733229FAA1800EF2CDA /* iOS-AudioVideo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E148A760229FAA1A00EF2CDA /* Build configuration list for PBXNativeTarget "iOS-AudioVideo" */;
+			buildPhases = (
+				E148A730229FAA1800EF2CDA /* Sources */,
+				E148A731229FAA1800EF2CDA /* Frameworks */,
+				E148A732229FAA1800EF2CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-AudioVideo";
+			productName = "iOS-AudioVideo";
+			productReference = E148A734229FAA1800EF2CDA /* iOS-AudioVideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E148A74B229FAA1A00EF2CDA /* iOS-AudioVideoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E148A763229FAA1A00EF2CDA /* Build configuration list for PBXNativeTarget "iOS-AudioVideoTests" */;
+			buildPhases = (
+				E148A748229FAA1A00EF2CDA /* Sources */,
+				E148A749229FAA1A00EF2CDA /* Frameworks */,
+				E148A74A229FAA1A00EF2CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E148A74E229FAA1A00EF2CDA /* PBXTargetDependency */,
+			);
+			name = "iOS-AudioVideoTests";
+			productName = "iOS-AudioVideoTests";
+			productReference = E148A74C229FAA1A00EF2CDA /* iOS-AudioVideoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E148A756229FAA1A00EF2CDA /* iOS-AudioVideoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E148A766229FAA1A00EF2CDA /* Build configuration list for PBXNativeTarget "iOS-AudioVideoUITests" */;
+			buildPhases = (
+				E148A753229FAA1A00EF2CDA /* Sources */,
+				E148A754229FAA1A00EF2CDA /* Frameworks */,
+				E148A755229FAA1A00EF2CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E148A759229FAA1A00EF2CDA /* PBXTargetDependency */,
+			);
+			name = "iOS-AudioVideoUITests";
+			productName = "iOS-AudioVideoUITests";
+			productReference = E148A757229FAA1A00EF2CDA /* iOS-AudioVideoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E148A72C229FAA1800EF2CDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = gaojun;
+				TargetAttributes = {
+					E148A733229FAA1800EF2CDA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E148A74B229FAA1A00EF2CDA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E148A733229FAA1800EF2CDA;
+					};
+					E148A756229FAA1A00EF2CDA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E148A733229FAA1800EF2CDA;
+					};
+				};
+			};
+			buildConfigurationList = E148A72F229FAA1800EF2CDA /* Build configuration list for PBXProject "iOS-AudioVideo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E148A72B229FAA1800EF2CDA;
+			productRefGroup = E148A735229FAA1800EF2CDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E148A733229FAA1800EF2CDA /* iOS-AudioVideo */,
+				E148A74B229FAA1A00EF2CDA /* iOS-AudioVideoTests */,
+				E148A756229FAA1A00EF2CDA /* iOS-AudioVideoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E148A732229FAA1800EF2CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E148A744229FAA1A00EF2CDA /* LaunchScreen.storyboard in Resources */,
+				E148A741229FAA1A00EF2CDA /* Assets.xcassets in Resources */,
+				E148A73F229FAA1800EF2CDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E148A74A229FAA1A00EF2CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E148A755229FAA1A00EF2CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E148A730229FAA1800EF2CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E148A73C229FAA1800EF2CDA /* ViewController.m in Sources */,
+				E148A747229FAA1A00EF2CDA /* main.m in Sources */,
+				E148A739229FAA1800EF2CDA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E148A748229FAA1A00EF2CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E148A751229FAA1A00EF2CDA /* iOS_AudioVideoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E148A753229FAA1A00EF2CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E148A75C229FAA1A00EF2CDA /* iOS_AudioVideoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E148A74E229FAA1A00EF2CDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E148A733229FAA1800EF2CDA /* iOS-AudioVideo */;
+			targetProxy = E148A74D229FAA1A00EF2CDA /* PBXContainerItemProxy */;
+		};
+		E148A759229FAA1A00EF2CDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E148A733229FAA1800EF2CDA /* iOS-AudioVideo */;
+			targetProxy = E148A758229FAA1A00EF2CDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E148A73D229FAA1800EF2CDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E148A73E229FAA1800EF2CDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E148A742229FAA1A00EF2CDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E148A743229FAA1A00EF2CDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E148A75E229FAA1A00EF2CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E148A75F229FAA1A00EF2CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E148A761229FAA1A00EF2CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = "iOS-AudioVideo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gaojun.iOS-AudioVideo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E148A762229FAA1A00EF2CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = "iOS-AudioVideo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gaojun.iOS-AudioVideo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E148A764229FAA1A00EF2CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iOS-AudioVideoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gaojun.iOS-AudioVideoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-AudioVideo.app/iOS-AudioVideo";
+			};
+			name = Debug;
+		};
+		E148A765229FAA1A00EF2CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iOS-AudioVideoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gaojun.iOS-AudioVideoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-AudioVideo.app/iOS-AudioVideo";
+			};
+			name = Release;
+		};
+		E148A767229FAA1A00EF2CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iOS-AudioVideoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gaojun.iOS-AudioVideoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS-AudioVideo";
+			};
+			name = Debug;
+		};
+		E148A768229FAA1A00EF2CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iOS-AudioVideoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gaojun.iOS-AudioVideoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS-AudioVideo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E148A72F229FAA1800EF2CDA /* Build configuration list for PBXProject "iOS-AudioVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E148A75E229FAA1A00EF2CDA /* Debug */,
+				E148A75F229FAA1A00EF2CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E148A760229FAA1A00EF2CDA /* Build configuration list for PBXNativeTarget "iOS-AudioVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E148A761229FAA1A00EF2CDA /* Debug */,
+				E148A762229FAA1A00EF2CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E148A763229FAA1A00EF2CDA /* Build configuration list for PBXNativeTarget "iOS-AudioVideoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E148A764229FAA1A00EF2CDA /* Debug */,
+				E148A765229FAA1A00EF2CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E148A766229FAA1A00EF2CDA /* Build configuration list for PBXNativeTarget "iOS-AudioVideoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E148A767229FAA1A00EF2CDA /* Debug */,
+				E148A768229FAA1A00EF2CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E148A72C229FAA1800EF2CDA /* Project object */;
+}
