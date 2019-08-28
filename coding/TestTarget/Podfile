@@ -1,0 +1,42 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+#第二种写法
+#abstract_target 'TestTarget' do
+#  pod 'AFNetworking'
+#
+#  target 'TestTarget-Debug' do
+#    pod 'Masonry'
+#  end
+#
+#  target 'TestTarget-Gray' do
+#    pod 'YYModel'
+#  end
+#
+#  target 'TestTarget-Release' do
+#    pod 'BlocksKit'
+#  end
+#
+#end
+
+#第一种写法
+#所有Targetg公共第三方
+def commonPods
+  pod 'AFNetworking'
+end
+
+target 'TestTarget-Debug' do
+  commonPods
+  pod 'Masonry'
+end
+
+target 'TestTarget-Gray' do
+  commonPods
+  pod 'YYModel'
+end
+
+target 'TestTarget-Release' do
+  commonPods
+  pod 'BlocksKit'
+end
+
