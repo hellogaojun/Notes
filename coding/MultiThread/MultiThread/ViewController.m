@@ -19,6 +19,7 @@
 #import "NSLockDemo.h"
 #import "NSConditionDemo.h"
 #import "NSLockConditionLockDemo.h"
+#import "MultiReadSingleWrite.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) GJBaseDemo *demo;
@@ -75,21 +76,17 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.demo otherTest];
+//    [self.demo otherTest];
 //    [self.demo ticketTest];
 //    [self.demo moneyTest];
+    [self readAndWrite];
 }
 
-- (void)test {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"******----%@",[NSThread currentThread]);
-        dispatch_queue_t serialQueue = dispatch_queue_create("queue", DISPATCH_QUEUE_SERIAL);
-        for (int i = 0; i < 10; i++) {
-            dispatch_async(serialQueue, ^{
-                NSLog(@"test----%@",[NSThread currentThread]);
-            });
-        }
-    });
+//读写操作
+- (void)readAndWrite {
+    MultiReadSingleWrite *rw = [MultiReadSingleWrite new];
+//    [rw method_dispatch_barrier_async];
+    [rw method_pthread_rwlock];
 }
 
 @end

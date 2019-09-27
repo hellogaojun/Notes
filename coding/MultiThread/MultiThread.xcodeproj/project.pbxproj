@@ -28,6 +28,7 @@
 		AD65AEEE233DCC080032B9EE /* NSLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD65AEED233DCC080032B9EE /* NSLockDemo.m */; };
 		AD65AEF1233DCC190032B9EE /* NSConditionDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD65AEF0233DCC190032B9EE /* NSConditionDemo.m */; };
 		AD65AEF4233DCC390032B9EE /* NSLockConditionLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD65AEF3233DCC390032B9EE /* NSLockConditionLockDemo.m */; };
+		AD65AEF8233DE1AA0032B9EE /* MultiReadSingleWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = AD65AEF7233DE1AA0032B9EE /* MultiReadSingleWrite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		AD65AEF0233DCC190032B9EE /* NSConditionDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSConditionDemo.m; sourceTree = "<group>"; };
 		AD65AEF2233DCC390032B9EE /* NSLockConditionLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLockConditionLockDemo.h; sourceTree = "<group>"; };
 		AD65AEF3233DCC390032B9EE /* NSLockConditionLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSLockConditionLockDemo.m; sourceTree = "<group>"; };
+		AD65AEF6233DE1AA0032B9EE /* MultiReadSingleWrite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiReadSingleWrite.h; sourceTree = "<group>"; };
+		AD65AEF7233DE1AA0032B9EE /* MultiReadSingleWrite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiReadSingleWrite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,7 @@
 		AD0D63752336144E00048EF7 /* MultiThread */ = {
 			isa = PBXGroup;
 			children = (
+				AD65AEF5233DE1710032B9EE /* 多读单写 */,
 				AD0D63AC233614A200048EF7 /* Interview */,
 				AD0D63AB2336149500048EF7 /* Locks */,
 				AD0D63762336144E00048EF7 /* AppDelegate.h */,
@@ -211,6 +215,15 @@
 			children = (
 			);
 			path = Interview;
+			sourceTree = "<group>";
+		};
+		AD65AEF5233DE1710032B9EE /* 多读单写 */ = {
+			isa = PBXGroup;
+			children = (
+				AD65AEF6233DE1AA0032B9EE /* MultiReadSingleWrite.h */,
+				AD65AEF7233DE1AA0032B9EE /* MultiReadSingleWrite.m */,
+			);
+			path = "多读单写";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +363,7 @@
 				AD0D63782336144E00048EF7 /* AppDelegate.m in Sources */,
 				AD65AEF1233DCC190032B9EE /* NSConditionDemo.m in Sources */,
 				AD65AEEE233DCC080032B9EE /* NSLockDemo.m in Sources */,
+				AD65AEF8233DE1AA0032B9EE /* MultiReadSingleWrite.m in Sources */,
 				AD65AEEB233DCB970032B9EE /* MutextConditionDemo.m in Sources */,
 				AD65AEDC233DB9E90032B9EE /* SemaphoreDemo.m in Sources */,
 				AD65AEDF233DBA010032B9EE /* SerialQueueDemo.m in Sources */,
