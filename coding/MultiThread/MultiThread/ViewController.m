@@ -79,7 +79,36 @@
 //    [self.demo otherTest];
 //    [self.demo ticketTest];
 //    [self.demo moneyTest];
-    [self readAndWrite];
+//    [self readAndWrite];
+    
+    [self interviewOne];
+}
+
+//2,3,4,1,test
+-  (void)interviewOne {
+     NSThread *thread = [[NSThread alloc]initWithBlock:^{
+            sleep(3);
+            NSLog(@"1");
+         //子线程默认没有启动Runloop
+            [[NSRunLoop currentRunLoop] addPort:[NSPort new] forMode:NSDefaultRunLoopMode];
+            [[NSRunLoop currentRunLoop] run];
+        }];
+        [thread start];
+      
+        NSLog(@"2");
+        
+    //waitUntilDone:表示是否堵塞当前线程(此处是主线程)
+    //    [self performSelector:@selector(test) onThread:thread withObject:nil waitUntilDone:NO ];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            //waitUntilDone:表示是否堵塞当前线程(此处是一个子线程)
+             [self performSelector:@selector(test) onThread:thread withObject:nil waitUntilDone:NO];
+            NSLog(@"4");
+        });
+        NSLog(@"3");
+}
+
+- (void)test {
+    NSLog(@"test");
 }
 
 //读写操作
