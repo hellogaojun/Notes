@@ -1,0 +1,625 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		847FB61225C29B08000FFF20 /* 触摸事件分发原理.png in Resources */ = {isa = PBXBuildFile; fileRef = 847FB61125C29B08000FFF20 /* 触摸事件分发原理.png */; };
+		847FB61725C29FA7000FFF20 /* 响应者链条.png in Resources */ = {isa = PBXBuildFile; fileRef = 847FB61625C29FA7000FFF20 /* 响应者链条.png */; };
+		847FB62B25C2AAB9000FFF20 /* GJEventTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FB62A25C2AAB9000FFF20 /* GJEventTestView.m */; };
+		847FB63025C2AD30000FFF20 /* Case.png in Resources */ = {isa = PBXBuildFile; fileRef = 847FB62F25C2AD30000FFF20 /* Case.png */; };
+		84BFC24825C167C000BB256C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC24725C167C000BB256C /* AppDelegate.m */; };
+		84BFC24B25C167C000BB256C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC24A25C167C000BB256C /* SceneDelegate.m */; };
+		84BFC24E25C167C000BB256C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC24D25C167C000BB256C /* ViewController.m */; };
+		84BFC25125C167C000BB256C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BFC24F25C167C000BB256C /* Main.storyboard */; };
+		84BFC25325C167C100BB256C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BFC25225C167C100BB256C /* Assets.xcassets */; };
+		84BFC25625C167C100BB256C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BFC25425C167C100BB256C /* LaunchScreen.storyboard */; };
+		84BFC25925C167C100BB256C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC25825C167C100BB256C /* main.m */; };
+		84BFC26325C167C200BB256C /* TipOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC26225C167C200BB256C /* TipOneTests.m */; };
+		84BFC26E25C167C200BB256C /* TipOneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC26D25C167C200BB256C /* TipOneUITests.m */; };
+		84BFC29925C17EDC00BB256C /* GJEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BFC29825C17EDC00BB256C /* GJEventView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84BFC25F25C167C200BB256C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BFC23B25C167C000BB256C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BFC24225C167C000BB256C;
+			remoteInfo = TipOne;
+		};
+		84BFC26A25C167C200BB256C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BFC23B25C167C000BB256C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BFC24225C167C000BB256C;
+			remoteInfo = TipOne;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		847FB61125C29B08000FFF20 /* 触摸事件分发原理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "触摸事件分发原理.png"; sourceTree = "<group>"; };
+		847FB61625C29FA7000FFF20 /* 响应者链条.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "响应者链条.png"; sourceTree = "<group>"; };
+		847FB62925C2AAB9000FFF20 /* GJEventTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJEventTestView.h; sourceTree = "<group>"; };
+		847FB62A25C2AAB9000FFF20 /* GJEventTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJEventTestView.m; sourceTree = "<group>"; };
+		847FB62F25C2AD30000FFF20 /* Case.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Case.png; sourceTree = "<group>"; };
+		84BFC24325C167C000BB256C /* TipOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BFC24625C167C000BB256C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84BFC24725C167C000BB256C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84BFC24925C167C000BB256C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		84BFC24A25C167C000BB256C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		84BFC24C25C167C000BB256C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		84BFC24D25C167C000BB256C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		84BFC25025C167C000BB256C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84BFC25225C167C100BB256C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84BFC25525C167C100BB256C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84BFC25725C167C100BB256C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BFC25825C167C100BB256C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84BFC25E25C167C200BB256C /* TipOneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipOneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BFC26225C167C200BB256C /* TipOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipOneTests.m; sourceTree = "<group>"; };
+		84BFC26425C167C200BB256C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BFC26925C167C200BB256C /* TipOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BFC26D25C167C200BB256C /* TipOneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipOneUITests.m; sourceTree = "<group>"; };
+		84BFC26F25C167C200BB256C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BFC29725C17EDC00BB256C /* GJEventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJEventView.h; sourceTree = "<group>"; };
+		84BFC29825C17EDC00BB256C /* GJEventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJEventView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84BFC24025C167C000BB256C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BFC25B25C167C200BB256C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BFC26625C167C200BB256C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84BFC23A25C167C000BB256C = {
+			isa = PBXGroup;
+			children = (
+				84BFC24525C167C000BB256C /* TipOne */,
+				84BFC26125C167C200BB256C /* TipOneTests */,
+				84BFC26C25C167C200BB256C /* TipOneUITests */,
+				84BFC24425C167C000BB256C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84BFC24425C167C000BB256C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84BFC24325C167C000BB256C /* TipOne.app */,
+				84BFC25E25C167C200BB256C /* TipOneTests.xctest */,
+				84BFC26925C167C200BB256C /* TipOneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84BFC24525C167C000BB256C /* TipOne */ = {
+			isa = PBXGroup;
+			children = (
+				84BFC29325C17AC800BB256C /* 事件传递和响应 */,
+				84BFC24625C167C000BB256C /* AppDelegate.h */,
+				84BFC24725C167C000BB256C /* AppDelegate.m */,
+				84BFC24925C167C000BB256C /* SceneDelegate.h */,
+				84BFC24A25C167C000BB256C /* SceneDelegate.m */,
+				84BFC24C25C167C000BB256C /* ViewController.h */,
+				84BFC24D25C167C000BB256C /* ViewController.m */,
+				84BFC24F25C167C000BB256C /* Main.storyboard */,
+				84BFC25225C167C100BB256C /* Assets.xcassets */,
+				84BFC25425C167C100BB256C /* LaunchScreen.storyboard */,
+				84BFC25725C167C100BB256C /* Info.plist */,
+				84BFC25825C167C100BB256C /* main.m */,
+			);
+			path = TipOne;
+			sourceTree = "<group>";
+		};
+		84BFC26125C167C200BB256C /* TipOneTests */ = {
+			isa = PBXGroup;
+			children = (
+				84BFC26225C167C200BB256C /* TipOneTests.m */,
+				84BFC26425C167C200BB256C /* Info.plist */,
+			);
+			path = TipOneTests;
+			sourceTree = "<group>";
+		};
+		84BFC26C25C167C200BB256C /* TipOneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84BFC26D25C167C200BB256C /* TipOneUITests.m */,
+				84BFC26F25C167C200BB256C /* Info.plist */,
+			);
+			path = TipOneUITests;
+			sourceTree = "<group>";
+		};
+		84BFC29325C17AC800BB256C /* 事件传递和响应 */ = {
+			isa = PBXGroup;
+			children = (
+				847FB62F25C2AD30000FFF20 /* Case.png */,
+				847FB61125C29B08000FFF20 /* 触摸事件分发原理.png */,
+				847FB61625C29FA7000FFF20 /* 响应者链条.png */,
+				84BFC29725C17EDC00BB256C /* GJEventView.h */,
+				84BFC29825C17EDC00BB256C /* GJEventView.m */,
+				847FB62925C2AAB9000FFF20 /* GJEventTestView.h */,
+				847FB62A25C2AAB9000FFF20 /* GJEventTestView.m */,
+			);
+			path = "事件传递和响应";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84BFC24225C167C000BB256C /* TipOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BFC27225C167C200BB256C /* Build configuration list for PBXNativeTarget "TipOne" */;
+			buildPhases = (
+				84BFC23F25C167C000BB256C /* Sources */,
+				84BFC24025C167C000BB256C /* Frameworks */,
+				84BFC24125C167C000BB256C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TipOne;
+			productName = TipOne;
+			productReference = 84BFC24325C167C000BB256C /* TipOne.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84BFC25D25C167C200BB256C /* TipOneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BFC27525C167C200BB256C /* Build configuration list for PBXNativeTarget "TipOneTests" */;
+			buildPhases = (
+				84BFC25A25C167C200BB256C /* Sources */,
+				84BFC25B25C167C200BB256C /* Frameworks */,
+				84BFC25C25C167C200BB256C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BFC26025C167C200BB256C /* PBXTargetDependency */,
+			);
+			name = TipOneTests;
+			productName = TipOneTests;
+			productReference = 84BFC25E25C167C200BB256C /* TipOneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84BFC26825C167C200BB256C /* TipOneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BFC27825C167C200BB256C /* Build configuration list for PBXNativeTarget "TipOneUITests" */;
+			buildPhases = (
+				84BFC26525C167C200BB256C /* Sources */,
+				84BFC26625C167C200BB256C /* Frameworks */,
+				84BFC26725C167C200BB256C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BFC26B25C167C200BB256C /* PBXTargetDependency */,
+			);
+			name = TipOneUITests;
+			productName = TipOneUITests;
+			productReference = 84BFC26925C167C200BB256C /* TipOneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84BFC23B25C167C000BB256C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					84BFC24225C167C000BB256C = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					84BFC25D25C167C200BB256C = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 84BFC24225C167C000BB256C;
+					};
+					84BFC26825C167C200BB256C = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 84BFC24225C167C000BB256C;
+					};
+				};
+			};
+			buildConfigurationList = 84BFC23E25C167C000BB256C /* Build configuration list for PBXProject "TipOne" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84BFC23A25C167C000BB256C;
+			productRefGroup = 84BFC24425C167C000BB256C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84BFC24225C167C000BB256C /* TipOne */,
+				84BFC25D25C167C200BB256C /* TipOneTests */,
+				84BFC26825C167C200BB256C /* TipOneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84BFC24125C167C000BB256C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BFC25625C167C100BB256C /* LaunchScreen.storyboard in Resources */,
+				84BFC25325C167C100BB256C /* Assets.xcassets in Resources */,
+				847FB61225C29B08000FFF20 /* 触摸事件分发原理.png in Resources */,
+				847FB63025C2AD30000FFF20 /* Case.png in Resources */,
+				84BFC25125C167C000BB256C /* Main.storyboard in Resources */,
+				847FB61725C29FA7000FFF20 /* 响应者链条.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BFC25C25C167C200BB256C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BFC26725C167C200BB256C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84BFC23F25C167C000BB256C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BFC24E25C167C000BB256C /* ViewController.m in Sources */,
+				84BFC29925C17EDC00BB256C /* GJEventView.m in Sources */,
+				847FB62B25C2AAB9000FFF20 /* GJEventTestView.m in Sources */,
+				84BFC24825C167C000BB256C /* AppDelegate.m in Sources */,
+				84BFC25925C167C100BB256C /* main.m in Sources */,
+				84BFC24B25C167C000BB256C /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BFC25A25C167C200BB256C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BFC26325C167C200BB256C /* TipOneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BFC26525C167C200BB256C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BFC26E25C167C200BB256C /* TipOneUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84BFC26025C167C200BB256C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BFC24225C167C000BB256C /* TipOne */;
+			targetProxy = 84BFC25F25C167C200BB256C /* PBXContainerItemProxy */;
+		};
+		84BFC26B25C167C200BB256C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BFC24225C167C000BB256C /* TipOne */;
+			targetProxy = 84BFC26A25C167C200BB256C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84BFC24F25C167C000BB256C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BFC25025C167C000BB256C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84BFC25425C167C100BB256C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BFC25525C167C100BB256C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84BFC27025C167C200BB256C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84BFC27125C167C200BB256C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84BFC27325C167C200BB256C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = TipOne/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84BFC27425C167C200BB256C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = TipOne/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		84BFC27625C167C200BB256C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = TipOneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipOneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TipOne.app/TipOne";
+			};
+			name = Debug;
+		};
+		84BFC27725C167C200BB256C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = TipOneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipOneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TipOne.app/TipOne";
+			};
+			name = Release;
+		};
+		84BFC27925C167C200BB256C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = TipOneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipOneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TipOne;
+			};
+			name = Debug;
+		};
+		84BFC27A25C167C200BB256C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY6Q9GBZHX;
+				INFOPLIST_FILE = TipOneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipOneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TipOne;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84BFC23E25C167C000BB256C /* Build configuration list for PBXProject "TipOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BFC27025C167C200BB256C /* Debug */,
+				84BFC27125C167C200BB256C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BFC27225C167C200BB256C /* Build configuration list for PBXNativeTarget "TipOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BFC27325C167C200BB256C /* Debug */,
+				84BFC27425C167C200BB256C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BFC27525C167C200BB256C /* Build configuration list for PBXNativeTarget "TipOneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BFC27625C167C200BB256C /* Debug */,
+				84BFC27725C167C200BB256C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BFC27825C167C200BB256C /* Build configuration list for PBXNativeTarget "TipOneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BFC27925C167C200BB256C /* Debug */,
+				84BFC27A25C167C200BB256C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84BFC23B25C167C000BB256C /* Project object */;
+}
