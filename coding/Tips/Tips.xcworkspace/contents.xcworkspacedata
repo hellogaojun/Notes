@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TipsThirdPart/TipsThirdPart.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TipOne/TipOne.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

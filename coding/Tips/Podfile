@@ -1,0 +1,26 @@
+platform :ios, '9.0'
+
+workspace 'Tips'
+
+def commonPods
+    pod 'AFNetworking'
+    pod 'MJExtension'
+    pod 'YYKit'
+    pod 'MJRefresh'
+    pod 'SDWebImage'
+    pod 'PureLayout'
+    pod 'Masonry'
+#    pod 'OOMDetector'
+    pod 'Aspects'
+    pod 'MagicalRecord'
+    pod 'FMDB'
+    pod 'GZIP'
+  end
+
+target 'TipsThirdPart' do
+  project 'TipsThirdPart/TipsThirdPart.xcodeproj'
+  commonPods
+end
+
+  
+  
