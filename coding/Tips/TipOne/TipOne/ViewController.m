@@ -36,11 +36,25 @@
     [self.view addSubview:redV];
     GJGreenView *greenV = [[GJGreenView alloc]initWithFrame:CGRectMake(-20, -50, 150, 150)];
     [redV addSubview:greenV];
+    
+    GJImageView *iv = [[GJImageView alloc]initWithFrame:CGRectMake(50, CGRectGetMaxY(redV.frame) + 100, 100, 100)];
+    iv.image = [UIImage imageNamed:@"触摸事件分发原理"];
+    [self.view addSubview:iv];
+    
+    GJButton *button = [GJButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(50, CGRectGetMaxY(iv.frame) + 100, 60, 60);
+    button.layer.cornerRadius = 15;
+    button.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:button];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"ViewController.view touch");
 }
 
+- (void)buttonClick {
+    NSLog(@"buttonClick");
+}
 
 @end

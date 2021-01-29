@@ -22,4 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface GJImageView : UIImageView
+
+@end
+
+@interface GJButton : UIButton
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -18,6 +18,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor greenColor];
+        
+        //点击事件
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(greenTap:)];
+//        [self addGestureRecognizer:tap];
     }
     return self;
 }
@@ -32,6 +36,10 @@
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 //    return self.superview;
 //}
+
+- (void)greenTap:(UITapGestureRecognizer *)tap {
+    NSLog(@"GreenView Tap");
+}
 
 @end
 
@@ -51,20 +59,21 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    NSLog(@"%s",__func__);
     //把被点击的点转换成子控件坐标系上的点
     CGPoint greenViewPoint = [self convertPoint:point toView:self.subviews.firstObject];
-    
+
     //触摸点在自己身上或者触摸点在子控件身上都返回自己作为最合适的View
 //    if ([self pointInside:point withEvent:event] ||
 //        [self.subviews.firstObject pointInside:greenViewPoint withEvent:event]) {
 //        return self;
 //    }
-    
+
     //触摸点在子控件身上，就返回子控件作为最合适的View
     if ([self.subviews.firstObject pointInside:greenViewPoint withEvent:event]) {
         return self.subviews.firstObject;
     }
-    
+
     return [super hitTest:point withEvent:event];
 }
 
@@ -123,4 +132,27 @@
  }
  
  */
+@end
+
+@implementation GJImageView
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    NSLog(@"%s",__func__);
+    return self.superview.subviews.firstObject;
+}
+
+@end
+
+@implementation GJButton
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    NSLog(@"%s",__func__);
+    return self.superview;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"button click");
+//    [super touchesBegan:touches withEvent:event];
+}
+
 @end
