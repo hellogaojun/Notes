@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846BD4E825C3E9F70026DE5F /* GJNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 846BD4E725C3E9F70026DE5F /* GJNotificationCenter.m */; };
 		847FB61225C29B08000FFF20 /* 触摸事件分发原理.png in Resources */ = {isa = PBXBuildFile; fileRef = 847FB61125C29B08000FFF20 /* 触摸事件分发原理.png */; };
 		847FB61725C29FA7000FFF20 /* 响应者链条.png in Resources */ = {isa = PBXBuildFile; fileRef = 847FB61625C29FA7000FFF20 /* 响应者链条.png */; };
 		847FB62B25C2AAB9000FFF20 /* GJEventTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FB62A25C2AAB9000FFF20 /* GJEventTestView.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		846BD4E625C3E9F70026DE5F /* GJNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJNotificationCenter.h; sourceTree = "<group>"; };
+		846BD4E725C3E9F70026DE5F /* GJNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJNotificationCenter.m; sourceTree = "<group>"; };
 		847FB61125C29B08000FFF20 /* 触摸事件分发原理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "触摸事件分发原理.png"; sourceTree = "<group>"; };
 		847FB61625C29FA7000FFF20 /* 响应者链条.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "响应者链条.png"; sourceTree = "<group>"; };
 		847FB62925C2AAB9000FFF20 /* GJEventTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJEventTestView.h; sourceTree = "<group>"; };
@@ -93,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846BD4E525C3E99E0026DE5F /* 自定义通知中心 */ = {
+			isa = PBXGroup;
+			children = (
+				846BD4E625C3E9F70026DE5F /* GJNotificationCenter.h */,
+				846BD4E725C3E9F70026DE5F /* GJNotificationCenter.m */,
+			);
+			path = "自定义通知中心";
+			sourceTree = "<group>";
+		};
 		84BFC23A25C167C000BB256C = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +128,7 @@
 		84BFC24525C167C000BB256C /* TipOne */ = {
 			isa = PBXGroup;
 			children = (
+				846BD4E525C3E99E0026DE5F /* 自定义通知中心 */,
 				84BFC29325C17AC800BB256C /* 事件传递和响应 */,
 				84BFC24625C167C000BB256C /* AppDelegate.h */,
 				84BFC24725C167C000BB256C /* AppDelegate.m */,
@@ -226,6 +239,7 @@
 		84BFC23B25C167C000BB256C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GJ;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					84BFC24225C167C000BB256C = {
@@ -300,6 +314,7 @@
 				84BFC29925C17EDC00BB256C /* GJEventView.m in Sources */,
 				847FB62B25C2AAB9000FFF20 /* GJEventTestView.m in Sources */,
 				84BFC24825C167C000BB256C /* AppDelegate.m in Sources */,
+				846BD4E825C3E9F70026DE5F /* GJNotificationCenter.m in Sources */,
 				84BFC25925C167C100BB256C /* main.m in Sources */,
 				84BFC24B25C167C000BB256C /* SceneDelegate.m in Sources */,
 			);

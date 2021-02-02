@@ -12,3 +12,7 @@
 
 @end
 
+@interface ViewController (ResponseChain)
+
+@end
+
