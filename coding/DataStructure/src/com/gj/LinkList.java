@@ -15,8 +15,15 @@ public class LinkList<E> extends AbstractList<E> {
         }
     }
 
+    /**
+     * 最好：O(1)
+     * 最坏：O(n)
+     * 平均：O(n)
+     */
     @Override
     public void add(int index, E element) {
+        rangeCheckForAdd(index);
+
         if (index == 0) {
             first = new Node<>(element,first);
         } else {
@@ -27,8 +34,15 @@ public class LinkList<E> extends AbstractList<E> {
         size++;
     }
 
+    /**
+     * 最好：O(1)
+     * 最坏：O(n)
+     * 平均：O(n)
+     */
     @Override
     public E remove(int index) {
+        rangeCheck(index);
+
         Node<E> node = first;
         if (index == 0) {
             first = node.next;
@@ -48,6 +62,11 @@ public class LinkList<E> extends AbstractList<E> {
         size = 0;
     }
 
+    /**
+     * 最好：O(1)
+     * 最坏：O(n)
+     * 平均：O(n)
+     */
     @Override
     public E set(int index, E element) {
         Node<E> oldNode = node(index);
@@ -56,6 +75,11 @@ public class LinkList<E> extends AbstractList<E> {
         return oldElement;
     }
 
+    /**
+     * 最好：O(1) 查头
+     * 最坏：O(n) 查尾
+     * 平均：O(n)
+     */
     @Override
     public E get(int index) {
         Node<E> node = node(index);

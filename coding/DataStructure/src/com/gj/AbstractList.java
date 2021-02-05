@@ -21,6 +21,11 @@ public abstract class AbstractList<E> implements List<E> {
         return indexOf(element) != ELEMENT_NOT_FOUND;
     }
 
+    /**
+     * 最好：O(1) 正常操作
+     * 最坏：O(n) 数组扩容的时候
+     * 平均：O(1)
+     */
     @Override
     public void add(E element) {
         add(size, element);

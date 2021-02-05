@@ -33,6 +33,9 @@ public class ArrayList<E> extends AbstractList<E> {
 
     /**
      * 指定位置添加元素
+     * 最好：O(1)
+     * 最坏：O(n)
+     * 平均：O(n)
      * @param index
      * @param element
      */
@@ -40,8 +43,7 @@ public class ArrayList<E> extends AbstractList<E> {
         rangeCheckForAdd(index);
 
         ensureCapacity(size + 1);
-
-        for (int i = size; i > index; i--) {
+        for (int i = size; i > index; i--) {//size是数据规模
             elements[i] = elements[i - 1];
         }
         elements[index] = element;
@@ -50,6 +52,9 @@ public class ArrayList<E> extends AbstractList<E> {
     
     /**
      * 根据索引删除元素
+     * 最好：O(1)
+     * 最坏：O(n)
+     * 平均：O(n)
      * @param index
      * @return
      */
@@ -67,6 +72,7 @@ public class ArrayList<E> extends AbstractList<E> {
 
     /**
      * 设置index位置元素
+     * T(n) = O(1)
      * @param index
      * @param element
      * @return
@@ -81,6 +87,7 @@ public class ArrayList<E> extends AbstractList<E> {
 
     /**
      * 获取index位置元素
+     * T(n) = O(1)
      * @param index
      * @return
      */
