@@ -1,11 +1,8 @@
 package com.gj;
 
 @SuppressWarnings("unchecked")
-public class ArrayList<E> {
-    /**
-     * 元素数量
-     */
-    private int size;
+public class ArrayList<E> extends AbstractList<E> {
+
     /**
      * 所有的元素
      */
@@ -14,8 +11,6 @@ public class ArrayList<E> {
      * 数组默认容量
      */
     private static final int DEFAULT_CAPACITY = 10;
-    private static final int ELEMENT_NOT_FOUND = -1;
-
 
     public ArrayList(int capacity) {
         capacity = capacity < DEFAULT_CAPACITY ? DEFAULT_CAPACITY : capacity;
@@ -25,13 +20,7 @@ public class ArrayList<E> {
     public ArrayList() {
         this(DEFAULT_CAPACITY);
     }
-    /**
-     * 
-     * @return 元素的数量
-     */
-    public int size() {
-        return size;
-    }
+    
     /**
      * 清空数组
      */
@@ -41,25 +30,11 @@ public class ArrayList<E> {
         }
         size = 0;
     }
+
     /**
-     * 判断数组是否为空
-     * @return 空true，非空false
-     */
-    public boolean isEmpty() {
-        return size == 0;
-    }
-    /**
-     * 是否包含特定元素
-     * @param element  待查询的元素
-     * @return 
-     */
-    public boolean contains(E element) {
-        return indexOf(element) != ELEMENT_NOT_FOUND;
-    }
-    /**
-     * 在指定位置添加元素
-     * @param index 待添加元素的索引
-     * @param element 待添加的元素
+     * 指定位置添加元素
+     * @param index
+     * @param element
      */
     public void add(int index ,E element) {
         rangeCheckForAdd(index);
@@ -72,17 +47,11 @@ public class ArrayList<E> {
         elements[index] = element;
         size++;
     }
+    
     /**
-     * 数组尾部添加元素
-     * @param element 待添加的元素
-     */
-    public void add(E element) {
-        add(size, element);
-    }
-    /**
-     * 删除指定位置的元素
-     * @param index 索引
-     * @return 被删除的那个元素
+     * 根据索引删除元素
+     * @param index
+     * @return
      */
     public E remove(int index) {
         rangeCheck(index);
@@ -95,11 +64,12 @@ public class ArrayList<E> {
         elements[size] = null;
         return element;
     }
+
     /**
-     * 替换某个位置的元素
-     * @param index 索引
-     * @param element 新元素
-     * @return 某个位置原有的元素
+     * 设置index位置元素
+     * @param index
+     * @param element
+     * @return
      */
     public E set(int index, E element) {
         rangeCheck(index);
@@ -108,8 +78,9 @@ public class ArrayList<E> {
         elements[index] = element;
         return old;
     }
+
     /**
-     * 获取某个位置的元素
+     * 获取index位置元素
      * @param index
      * @return
      */
@@ -118,8 +89,9 @@ public class ArrayList<E> {
 
         return elements[index];
     }
+
     /**
-     * 获取某个元素第一次出现的索引
+     * 获取元素索引
      * @param element
      * @return
      */
@@ -136,28 +108,12 @@ public class ArrayList<E> {
 
         return ELEMENT_NOT_FOUND;
     }
-    /**
-     * 越界检查
-     * @param index
-     */
-    private void rangeCheck(int index) {
-        if(index < 0 | index >= size) {
-            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-        }
-    }
-    /**
-     * add方法的越界检查
-     */
-    private void rangeCheckForAdd(int index) {
-        if(index < 0 | index > size) {
-            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-        }
-    }
+
     /**
      * 数组扩容
      * @param capacity 至少要扩大的容量
      */
-    public void ensureCapacity(int capacity) {
+    private void ensureCapacity(int capacity) {
         int oldCapacity = elements.length;//现在的容量
         if(oldCapacity >= capacity) return;
 
