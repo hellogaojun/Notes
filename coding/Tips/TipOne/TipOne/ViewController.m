@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSMutableArray *arr = [NSMutableArray array];
+    [self keyPathsForValuesAffectingValueForKey:nil];
 }
 
 @end
