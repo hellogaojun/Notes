@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TestOC/TestOC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TipsInterview/TipsInterview.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TipsThirdPart/TipsThirdPart.xcodeproj">
    </FileRef>
    <FileRef
