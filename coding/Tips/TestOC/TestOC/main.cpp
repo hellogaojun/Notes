@@ -106,9 +106,7 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_3edf49_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"Jobs",4};
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_3edf49_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"no:%d,age:%d,name:%@",20};
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_3edf49_mi_2 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"Student:: score:%d,grade:%d",27};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_c9cd0c_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"Jobs",4};
 
 
 
@@ -36739,6 +36737,8 @@ struct Person_IMPL {
 // @property (nonatomic, copy) NSString *name;
 // @property (nonatomic, assign) int age;
 
+// - (void)test;
+
 /* @end */
 
 #pragma clang assume_nonnull end
@@ -36762,60 +36762,48 @@ struct Student_IMPL {
 /* @end */
 
 #pragma clang assume_nonnull end
-
-
-struct NSObject_IMPL {
-    Class isa;
-};
-
-
-struct Person_IMPL {
-    struct NSObject_IMPL NSObject_IVARS;
-    int _no;
-    int _age;
-    NSString * _Nonnull _name;
-};
-
-
-struct Student_IMPL {
-    struct Person_IMPL Person_IVARS;
-    int _score;
-    int _grade;
-};
-
 void test1() {
     NSObject *obj = ((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("alloc")), sel_registerName("init"));
 
     Person *p = ((Person *(*)(id, SEL))(void *)objc_msgSend)((id)((Person *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Person"), sel_registerName("alloc")), sel_registerName("init"));
     ((void (*)(id, SEL, int))(void *)objc_msgSend)((id)p, sel_registerName("setAge:"), 66);
-    ((void (*)(id, SEL, NSString * _Nonnull))(void *)objc_msgSend)((id)p, sel_registerName("setName:"), (NSString *)&__NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_3edf49_mi_0);
+    ((void (*)(id, SEL, NSString * _Nonnull))(void *)objc_msgSend)((id)p, sel_registerName("setName:"), (NSString *)&__NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_c9cd0c_mi_0);
 
     (*(int *)((char *)p + OBJC_IVAR_$_Person$_no)) = 9;
-
-    struct Person_IMPL *p2 = (__bridge struct Person_IMPL *)(p);
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_3edf49_mi_1,p2->_no,p2->_age,p2->_name);
-
-    Student *stu2 = ((Student *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Student"), sel_registerName("new"));
-    struct Student_IMPL *stu = (__bridge struct Student_IMPL *)(stu2);
-    stu->_grade = 3;
-    stu->_score = 100;
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_xk_djgzzrw5705fcm4k5r9n47wc0000gn_T_main_3edf49_mi_2,((int (*)(id, SEL))(void *)objc_msgSend)((id)stu2, sel_registerName("score")),((int (*)(id, SEL))(void *)objc_msgSend)((id)stu2, sel_registerName("grade")));
-
-
+        size_t size_p = class_getInstanceSize(((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Person"), sel_registerName("class")));
+        size_t size_p2 = malloc_size((__bridge const void *)(p));
 
 }
+
+void test2() {
+    NSObject *obj1 = ((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("alloc")), sel_registerName("init"));
+    NSObject *obj2 = ((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("alloc")), sel_registerName("init"));
+    Class objectClass1 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)obj1, sel_registerName("class"));
+    Class objectClass2 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)obj2, sel_registerName("class"));
+    Class objectClass3 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("class"));
+    Class objectClass4 = object_getClass(obj1);
+    Class objectClass5 = object_getClass(obj2);
+    Class objectClass6 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)objectClass1, sel_registerName("class"));
+
+    Class objectMetaClass = object_getClass(objectClass1);
+
+
+    BOOL result = class_isMetaClass(objectClass6);
+    BOOL result2 = class_isMetaClass(objectMetaClass);
+
+}
+
 
 int main(int argc, const char * argv[]) {
     /* @autoreleasepool */ { __AtAutoreleasePool __autoreleasepool; 
 
 
-        NSObject *obj1 = ((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("alloc")), sel_registerName("init"));
-        NSObject *obj2 = ((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)((NSObject *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("alloc")), sel_registerName("init"));
-        Class objectClass1 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)obj1, sel_registerName("class"));
-        Class objectClass2 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)obj2, sel_registerName("class"));
-        Class objectClass3 = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("class"));
-        Class objectClass4 = object_getClass(obj1);
-        Class objectClass5 = object_getClass(obj2);
+
+
+
+
+
+        test1();
 
     }
     return 0;

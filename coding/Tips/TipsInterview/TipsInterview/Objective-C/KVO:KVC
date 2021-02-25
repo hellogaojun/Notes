@@ -1,0 +1,42 @@
+
+//KVO
+
+//1、iOS用什么方式实现对一个对象的KVO？（KVO的本质是什么？）
+答：利用RuntimAPI动态生成一个子类，并且让instance对象的isa指针指向这个全新的子类。
+当修改instance对象的属性时，会调用Foundation的_NSSetXXXValueAndNotify函数，这个函数实现是：
+willChangeValueForKey
+父类原来的setter
+didChangeValueForKey
+内部会触发监听器（Observer）的监听方法observeValueForKeyPath: ofObject: change: context:
+
+//2、如何手动触发KVO？
+答：我们一般是调用set方法赋值，从而自动触发KVO。
+手动调用其实是调用willChangeValueForKey和didChangeValueForKey方法
+
+//3、直接修改成员变量是否会触发KVO？
+答：不会，因为没有调用setter方法。因为KVO的本质是重写set方法，然后在set方法里依次调用willChangeValueForKey，原来的set方法，didChangeValueForKey，didChangeValueForKey内部会调用observer的observeValueForKeyPath: ofObject: change: context:方法
+
+
+//KVC
+
+//1、通过KVC修改属性会触发KVO么？
+答：会触发KVO监听，尽管没有setter方法，但是[person setValue:@10 forKey:@"age”];内部会调用willChangeValueForKey和didChangeValueForKey方法，相当于手动触发了KVO。
+
+//2、KVC的赋值和取值过程是怎样的？原理是什么？
+/*
+ 
+ 参考图setValueForKey.png和valueForKey.png
+  
+ 基本描述如下：
+ 1.当我们调用[person setValue:@10 forKey:@"age”];方法时，系统会依次做如下操作：
+ 查找Person类里面有没有setKey方法，如果没有则查找_setKey方法，如果查找到了就直接调用，如果都没有找到那么会调用accessInstanceVariablesDirectly方法，该方法是控制是否能访问成员变量，默认是返回YES，如果返回YES，则依次会查找Person类里面是否有_key，_isKey，key，isKey成员变量，如果有则赋值给它。如果都没有则抛出setValue:forUndefinedKey:异常。如果accessInstanceVariablesDirectly方法返回NO，也抛出setValue:forUndefinedKey:异常。
+  
+ 2.当我们调用[person valueForKey:@"age"]方法时，跟上述方法类似，系统会依次做如下操作：
+ 按顺序依次查找Person类里面有没有getKey，key，isKey，_key，如果有则直接调用方法，如果都没有找到，那么也会调用accessInstanceVariablesDirectly方法，该方法是控制是否能访问成员变量，默认是返回YES，如果返回YES，则依次会查找Person类里面是否有_key，_isKey，key，isKey成员变量，如果有则直接取成员变量的值，如果都没有则抛出setValue:forUndefinedKey:异常。如果accessInstanceVariablesDirectly方法返回NO，也抛出setValue:forUndefinedKey:异常。
+ 
+ */
+
+        
+
+
+

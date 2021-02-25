@@ -13,4 +13,10 @@
     NSLog(@"Person-test");
 }
 
++ (void)personClassMethod {}
+
+- (void)personInstanceMethod {}
+
+- (id)copyWithZone:(nullable NSZone *)zone {return nil;}
+
 @end

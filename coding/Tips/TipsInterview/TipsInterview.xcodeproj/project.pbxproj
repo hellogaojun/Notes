@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84645E7025E7A23900EC4186 /* KVO:KVC in Resources */ = {isa = PBXBuildFile; fileRef = 84645E6F25E7A23900EC4186 /* KVO:KVC */; };
+		84645E7525E7ACC100EC4186 /* setValueForKey.png in Resources */ = {isa = PBXBuildFile; fileRef = 84645E7425E7ACC100EC4186 /* setValueForKey.png */; };
+		84645E7A25E7ACC600EC4186 /* valueForKey.png in Resources */ = {isa = PBXBuildFile; fileRef = 84645E7925E7ACC600EC4186 /* valueForKey.png */; };
+		84645E8025E7B28400EC4186 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 84645E7F25E7B28400EC4186 /* Animal.m */; };
+		84645E8625E7B2A900EC4186 /* Animal+one.m in Sources */ = {isa = PBXBuildFile; fileRef = 84645E8525E7B2A900EC4186 /* Animal+one.m */; };
+		84645E9225E7B38A00EC4186 /* Animal+two.m in Sources */ = {isa = PBXBuildFile; fileRef = 84645E9125E7B38A00EC4186 /* Animal+two.m */; };
 		8468AB4525E4E72E002F8519 /* isa+superclass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8468AB4425E4E72E002F8519 /* isa+superclass.png */; };
+		84BE570025E65E6A00AD8CAA /* GJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE56FF25E65E6A00AD8CAA /* GJPerson.m */; };
 		84D9BFB425E3547400CCA1A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9BFB325E3547400CCA1A5 /* AppDelegate.m */; };
 		84D9BFB725E3547400CCA1A5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9BFB625E3547400CCA1A5 /* SceneDelegate.m */; };
 		84D9BFBA25E3547400CCA1A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9BFB925E3547400CCA1A5 /* ViewController.m */; };
@@ -38,7 +45,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84645E5E25E796A000EC4186 /* NSKVONotifying_GJPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSKVONotifying_GJPerson.h; sourceTree = "<group>"; };
+		84645E5F25E796A000EC4186 /* NSKVONotifying_GJPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSKVONotifying_GJPerson.m; sourceTree = "<group>"; };
+		84645E6F25E7A23900EC4186 /* KVO:KVC */ = {isa = PBXFileReference; lastKnownFileType = text; path = "KVO:KVC"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84645E7425E7ACC100EC4186 /* setValueForKey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setValueForKey.png; sourceTree = "<group>"; };
+		84645E7925E7ACC600EC4186 /* valueForKey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueForKey.png; sourceTree = "<group>"; };
+		84645E7E25E7B28400EC4186 /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		84645E7F25E7B28400EC4186 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		84645E8425E7B2A900EC4186 /* Animal+one.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animal+one.h"; sourceTree = "<group>"; };
+		84645E8525E7B2A900EC4186 /* Animal+one.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Animal+one.m"; sourceTree = "<group>"; };
+		84645E9025E7B38A00EC4186 /* Animal+two.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animal+two.h"; sourceTree = "<group>"; };
+		84645E9125E7B38A00EC4186 /* Animal+two.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Animal+two.m"; sourceTree = "<group>"; };
 		8468AB4425E4E72E002F8519 /* isa+superclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "isa+superclass.png"; sourceTree = "<group>"; };
+		84BE56FE25E65E6A00AD8CAA /* GJPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJPerson.h; sourceTree = "<group>"; };
+		84BE56FF25E65E6A00AD8CAA /* GJPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJPerson.m; sourceTree = "<group>"; };
 		84D9BFAF25E3547400CCA1A5 /* TipsInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D9BFB225E3547400CCA1A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84D9BFB325E3547400CCA1A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,8 +165,21 @@
 		84D9BFEA25E3549D00CCA1A5 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				84645E7925E7ACC600EC4186 /* valueForKey.png */,
+				84645E7425E7ACC100EC4186 /* setValueForKey.png */,
 				8468AB4425E4E72E002F8519 /* isa+superclass.png */,
 				84D9BFF525E359E900CCA1A5 /* OC语法 */,
+				84645E6F25E7A23900EC4186 /* KVO:KVC */,
+				84BE56FE25E65E6A00AD8CAA /* GJPerson.h */,
+				84BE56FF25E65E6A00AD8CAA /* GJPerson.m */,
+				84645E5E25E796A000EC4186 /* NSKVONotifying_GJPerson.h */,
+				84645E5F25E796A000EC4186 /* NSKVONotifying_GJPerson.m */,
+				84645E7E25E7B28400EC4186 /* Animal.h */,
+				84645E7F25E7B28400EC4186 /* Animal.m */,
+				84645E8425E7B2A900EC4186 /* Animal+one.h */,
+				84645E8525E7B2A900EC4186 /* Animal+one.m */,
+				84645E9025E7B38A00EC4186 /* Animal+two.h */,
+				84645E9125E7B38A00EC4186 /* Animal+two.m */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -253,11 +286,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84645E7525E7ACC100EC4186 /* setValueForKey.png in Resources */,
 				8468AB4525E4E72E002F8519 /* isa+superclass.png in Resources */,
 				84D9BFF625E359E900CCA1A5 /* OC语法 in Resources */,
 				84D9BFC225E3547700CCA1A5 /* LaunchScreen.storyboard in Resources */,
+				84645E7025E7A23900EC4186 /* KVO:KVC in Resources */,
 				84D9BFBF25E3547700CCA1A5 /* Assets.xcassets in Resources */,
 				84D9BFBD25E3547400CCA1A5 /* Main.storyboard in Resources */,
+				84645E7A25E7ACC600EC4186 /* valueForKey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +321,11 @@
 				84D9BFBA25E3547400CCA1A5 /* ViewController.m in Sources */,
 				84D9BFB425E3547400CCA1A5 /* AppDelegate.m in Sources */,
 				84D9BFC525E3547700CCA1A5 /* main.m in Sources */,
+				84645E8025E7B28400EC4186 /* Animal.m in Sources */,
+				84645E9225E7B38A00EC4186 /* Animal+two.m in Sources */,
+				84645E8625E7B2A900EC4186 /* Animal+one.m in Sources */,
 				84D9BFB725E3547400CCA1A5 /* SceneDelegate.m in Sources */,
+				84BE570025E65E6A00AD8CAA /* GJPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

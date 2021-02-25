@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Person.h"
 #import "Student.h"
+#import "MJClassInfo.h"
 
 //NSObject对应的C++代码
 struct NSObject_IMPL {
@@ -50,6 +51,7 @@ void test1() {
     
 //        size_t size_p = class_getInstanceSize(Person.class);
 //        size_t size_p2 = malloc_size((__bridge const void *)(p));
+//    int size_p3 = sizeof(struct Person_IMPL);//24
 }
 
 void test2() {
@@ -70,15 +72,25 @@ void test2() {
     
 }
 
+void test3() {
+    Student *stu = [Student new];
+    stu.score = 100;
+    
+    mj_objc_class *studentClass = (__bridge struct mj_objc_class *)([Student class]);
+    mj_objc_class *personClass = (__bridge struct mj_objc_class *)([Person class]);
+    
+    class_rw_t *studentClassData = studentClass->data();
+    class_rw_t *personClassData = personClass->data();
+    
+    class_rw_t *studentMetaClassData = studentClass->metaClass()->data();
+    class_rw_t *personMetaClassData = personClass->metaClass()->data();
+    
+    NSLog(@"end");
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        
-        Student *s = [[Student alloc]init];
-        [s test];
-        
-        [s performSelector:@selector(test)];
 
     }
     return 0;

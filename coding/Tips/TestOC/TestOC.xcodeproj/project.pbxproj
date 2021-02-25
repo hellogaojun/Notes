@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		84D9C04025E3A08B00CCA1A5 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C03925E3A08B00CCA1A5 /* Student.m */; };
 		84D9C04125E3A08B00CCA1A5 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C03A25E3A08B00CCA1A5 /* Person.m */; };
-		84D9C04225E3A08B00CCA1A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C03B25E3A08B00CCA1A5 /* main.m */; };
+		84D9C04225E3A08B00CCA1A5 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C03B25E3A08B00CCA1A5 /* main.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,12 +25,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84645E5B25E77F4D00EC4186 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 		84D9C02A25E3A06500CCA1A5 /* TestOC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestOC; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D9C03725E3A08B00CCA1A5 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		84D9C03825E3A08B00CCA1A5 /* Student.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Student.cpp; sourceTree = "<group>"; };
 		84D9C03925E3A08B00CCA1A5 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		84D9C03A25E3A08B00CCA1A5 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		84D9C03B25E3A08B00CCA1A5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84D9C03B25E3A08B00CCA1A5 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		84D9C03C25E3A08B00CCA1A5 /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
 		84D9C03D25E3A08B00CCA1A5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		84D9C03E25E3A08B00CCA1A5 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -66,14 +67,15 @@
 		84D9C03625E3A08B00CCA1A5 /* TestOC */ = {
 			isa = PBXGroup;
 			children = (
-				84D9C03725E3A08B00CCA1A5 /* Person.h */,
-				84D9C03825E3A08B00CCA1A5 /* Student.cpp */,
-				84D9C03925E3A08B00CCA1A5 /* Student.m */,
-				84D9C03A25E3A08B00CCA1A5 /* Person.m */,
-				84D9C03B25E3A08B00CCA1A5 /* main.m */,
-				84D9C03C25E3A08B00CCA1A5 /* Person.cpp */,
 				84D9C03D25E3A08B00CCA1A5 /* main.cpp */,
+				84D9C03B25E3A08B00CCA1A5 /* main.mm */,
+				84645E5B25E77F4D00EC4186 /* MJClassInfo.h */,
+				84D9C03C25E3A08B00CCA1A5 /* Person.cpp */,
+				84D9C03725E3A08B00CCA1A5 /* Person.h */,
+				84D9C03A25E3A08B00CCA1A5 /* Person.m */,
+				84D9C03825E3A08B00CCA1A5 /* Student.cpp */,
 				84D9C03E25E3A08B00CCA1A5 /* Student.h */,
+				84D9C03925E3A08B00CCA1A5 /* Student.m */,
 			);
 			path = TestOC;
 			sourceTree = "<group>";
@@ -135,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D9C04125E3A08B00CCA1A5 /* Person.m in Sources */,
-				84D9C04225E3A08B00CCA1A5 /* main.m in Sources */,
+				84D9C04225E3A08B00CCA1A5 /* main.mm in Sources */,
 				84D9C04025E3A08B00CCA1A5 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

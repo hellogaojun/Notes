@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person : NSObject {
+@interface Person : NSObject<NSCopying> {
     @public
     int _no;
 }
@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) int age;
 
 - (void)test;
+
+- (void)personInstanceMethod;
+
++ (void)personClassMethod;
 
 @end
 

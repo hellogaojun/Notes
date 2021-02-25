@@ -9,10 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Student : Person
+@interface Student : Person <NSCoding>
 
 @property (nonatomic, assign) int score;
 @property (nonatomic, assign) int grade;
+
+- (void)studentInstanceMethod;
++ (void)studentClassMethod;
 
 @end
 
