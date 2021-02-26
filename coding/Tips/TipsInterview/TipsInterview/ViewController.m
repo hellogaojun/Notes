@@ -9,6 +9,8 @@
 #import <objc/runtime.h>
 #import "Objective-C/GJPerson.h"
 #import "Objective-C/Animal+one.h"
+#import "Objective-C/Dog.h"
+
 @interface ViewController ()
 
 @property (nonatomic, strong) GJPerson *person1;
@@ -24,8 +26,15 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    Dog *d = [Dog new];
+    
     Animal *a = [Animal new];
     [a run];
+    
+    Dog *d2 = [Dog new];
+    
+    
 }
 
 

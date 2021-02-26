@@ -1,0 +1,43 @@
+
+//将一个分类转成cpp文件，可以看到，其实分类底层结构就是一个_category_t的结构体：
+
+struct _category_t {
+    const char *name;//类名
+    struct _class_t *cls;
+    const struct _method_list_t *instance_methods;//对象方法列表
+    const struct _method_list_t *class_methods;//类方法列表
+    const struct _protocol_list_t *protocols;//协议列表
+    const struct _prop_list_t *properties;//属性列表
+};
+
+/*
+ 当程序运行时，所有的分类的属性方法会合并到主类里面,分类的对象方法合并到主类对象里面，分类的类方法合并到主元类对象里面，
+ 后面合并进来的分类方法列表是放在数组的前面的，最后把所有分类的方法列表合并到原有类的方法列表前面。也就是说后编译的分类数据会在数组的前面，当我们调用时会优先调用数组前面的方法。
+ 
+ 
+ Questions:
+ 
+ 1.category的实现原理
+ category编译之后的底层结构是struct category_t，里面存储着分类的对象方法，类方法，属性，协议信息，在程序运行的时候，runtime会将category的数据，合并到原有类信息中（类对象，元类对象中）
+
+
+ 2.category的加载处理过程
+ 1、通过Runtime加载某个类的所有category数据
+ 2、把所有category的方法，属性，协议数据，合并到一个大数组中，后面参与编译的category数据，会在数组的前面
+ 3、将合并后的分类数据（方法，属性，协议），插入到类原来数据的前面
+
+ 
+ 3.category和类扩展class extension的区别？
+ category是在运行时将方法属性合并到类对象里面，而类扩展是在编译的时候就将方法属性等合并到类对象里面
+ 
+ */
+
+/*
+ Category设置关联对象原理：
+ 其实runtime是生成一个AssociationsManager类用来管理分类的关联对象，让分类能正常使用成员变量，有点类似于用字典去保存的原理。通过查看源码，我们可以知道AssociationsManager类有一个AssociationsHashMap属性，这个属性是相当于一个字典，用来存储对象-关联对象的，也就是它的key是我们关联对象时传的self，也就是这个Person分类，以这个为key，然后value是一个ObjectAssociationMap，ObjectAssociationMap对象也相当于是一个字典，这个字典的key是我们关联对象时传进去的那个key，value是ObjcAssociation，ObjcAssociation对象里面有两个属性_value和_policy，这两个就是我们关联对象的值和关联策略了。
+
+ 简单说AssociationsHashMap存储的是项目中所有分类的关联对象，里面应该是长这样{Person分类: ObjectAssociationMap,Student分类: ObjectAssociationMap}，我们项目中有几个分类有关联对象，那AssociationsHashMap里面就有多少个元素。而ObjectAssociationMap里面存放的就是关联对象的key和ObjcAssociation，里面应该长这样{@selector(weight):@(weight),@selector(name):name}，一个分类里面有多少个关联对象ObjectAssociationMap里面就有多少个元素。最后ObjcAssociation就是保存着关联对象的值和关联策略了。ObjcAssociation{unitptr_t _policy= OBJC_ASSOCIATION_RETAIN_NONATOMIC; id _value=@(weight)}。
+ 关联对象.jpeg图的展示了其中的原理。
+ 
+ */
+
