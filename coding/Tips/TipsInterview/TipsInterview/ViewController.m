@@ -10,7 +10,7 @@
 #import "Objective-C/GJPerson.h"
 #import "Objective-C/Animal+one.h"
 #import "Objective-C/Dog.h"
-
+#import "Objective-C/Student.h"
 @interface ViewController ()
 
 @property (nonatomic, strong) GJPerson *person1;
@@ -22,21 +22,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //看print的打印结果，试分析之（神奇的代码）
+//    id cls = [GJPerson class];
+//    void *obj = &cls;
+//    [(__bridge id)obj print];// my name's <ViewController: 0x7ff6dc404cb0>
 
+    [NSRunLoop mainRunLoop];
+    [NSRunLoop currentRunLoop];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+   
+}
+
+- (void)testInitializeAndLoad {
     Dog *d = [Dog new];
     
     Animal *a = [Animal new];
     [a run];
     
     Dog *d2 = [Dog new];
-    
-    
 }
-
 
 #pragma mark - KVO
 

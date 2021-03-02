@@ -1,0 +1,60 @@
+
+/**
+ objc_msgSend执行流程：
+ 1.消息发送
+ 2.动态方法解析
+ 3.消息转发
+ 
+ runtime是什么？
+ OC是一门动态性比较强的语言，允许很多操作推迟到程序运行时再执行；
+ OC的动态性就是由Runtime支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数；
+ 平时编写的OC代码，底层都是转换成了Runtime API进行调用。
+ 
+ runtime具体应用：
+ 1.利用关联对象（AssociatedObject）给分类添加属性；引出category关联对象相关的
+ 2.遍历类的所有成员变量（字典转模型，自动归档解档）；自己写JSON解析库
+ 3.交换方法的实现（交换系统的方法）；埋点能使用该策略，埋点相关
+ 4.利用消息转发机制解决方法找不到的异常问题；Crash防护的一种手段
+ 
+ 
+ Questions:
+ 
+ */
+
+//看以下几个方法的实现
+//类方法比较的是元类对象
+//实例方法比较的是类对象
+//isMemberOfClass是比较自身
+//isKindOfClass是比较沿着继承链条的对象
+
++ (BOOL)isMemberOfClass:(Class)cls {
+    return object_getClass((id)self) == cls;
+}
+
+- (BOOL)isMemberOfClass:(Class)cls {
+    return [self class] == cls;
+}
+
++ (BOOL)isKindOfClass:(Class)cls {
+    for (Class tcls = object_getClass((id)self); tcls; tcls = tcls->superclass) {
+        if (tcls == cls) return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isKindOfClass:(Class)cls {
+    for (Class tcls = [self class]; tcls; tcls = tcls->superclass) {
+        if (tcls == cls) return YES;
+    }
+    return NO;
+}
+
+//下面几种写法执行的都是类方法（+方法）
+BOOL res1 = [[NSObject class] isKindOfClass:[NSObject class]];//YES
+BOOL res2 = [[NSObject class] isMemberOfClass:[NSObject class]];//NO
+BOOL res3 = [[Person class] isKindOfClass:[Person class]];//NO
+BOOL res4 = [[Person class] isMemberOfClass:[Person class]];//NO
+BOOL res5 = [Student isKindOfClass:[NSObject class]];//YES
+
+
+

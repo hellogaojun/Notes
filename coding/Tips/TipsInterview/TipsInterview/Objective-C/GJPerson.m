@@ -31,4 +31,9 @@
     NSLog(@"didChangeValueForKey===end");
 }
 
+
+- (void)print {
+    NSLog(@"my name's %@",self.name);
+}
+
 @end
