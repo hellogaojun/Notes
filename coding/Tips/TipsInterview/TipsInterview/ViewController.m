@@ -11,6 +11,8 @@
 #import "Objective-C/Animal+one.h"
 #import "Objective-C/Dog.h"
 #import "Objective-C/Student.h"
+#import "RunloopController.h"
+
 @interface ViewController ()
 
 @property (nonatomic, strong) GJPerson *person1;
@@ -34,8 +36,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-   
+    [self.navigationController pushViewController:[[RunloopController alloc]init] animated:YES];
 }
+
 
 - (void)testInitializeAndLoad {
     Dog *d = [Dog new];
