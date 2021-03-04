@@ -1,4 +1,93 @@
 
+#pragma mark - Runloop关键源码
+
+
+//通知Observers：进入RunLoop
+    __CFRunLoopDoObservers(rl, currentMode, kCFRunLoopEntry);
+    
+    // 具体要做的事情
+    result = __CFRunLoopRun(rl, currentMode, seconds, returnAfterSourceHandled, previousMode);
+    
+    // 通知Observers：退出RunLoop
+     __CFRunLoopDoObservers(rl, currentMode, kCFRunLoopExit);
+
+static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInterval seconds, Boolean stopAfterHandle, CFRunLoopModeRef previousMode) {
+int32_t retVal = 0;
+    do {
+        //通知Observers：即将处理Timers
+        __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeTimers);
+        
+        //通知Observers：即将处理Sources
+        __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeSources);
+        
+        //处理Blocks
+        __CFRunLoopDoBlocks(rl, rlm);
+        
+        //处理Source0
+        if (__CFRunLoopDoSources0(rl, rlm, stopAfterHandle)) {
+            //处理Blocks
+            __CFRunLoopDoBlocks(rl, rlm);
+        }
+
+        Boolean poll = sourceHandledThisLoop || (0ULL == timeout_context->termTSR);
+
+        //判断有无Source1
+            if (__CFRunLoopServiceMachPort(dispatchPort, &msg, sizeof(msg_buffer), &livePort, 0, &voucherState, NULL)) {
+                //如果有Source1
+                goto handle_msg;
+            }
+
+        didDispatchPortLastTime = false;
+        
+        //通知Observers：即将休眠
+        __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeWaiting);
+        //休眠
+        __CFRunLoopSetSleeping(rl);
+
+        do {//等待别的消息来唤醒当前线程，即等待Source1唤醒线程
+            __CFRunLoopServiceMachPort(waitSet, &msg, sizeof(msg_buffer), &livePort, poll ? 0 : TIMEOUT_INFINITY, &voucherState, &voucherCopy);
+        } while (1);
+        
+        __CFRunLoopUnsetSleeping(rl);
+        
+        //通知Observers：结束休眠
+        __CFRunLoopDoObservers(rl, rlm, kCFRunLoopAfterWaiting);
+
+        handle_msg:;
+
+        else if (被Timer唤醒) {
+            __CFRunLoopDoTimers(rl, rlm, mach_absolute_time())
+        }
+        else if (被GCD唤醒) {
+            // 处理GCD相关的事情
+            __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__(msg);
+        } else {
+            //被Source1唤醒
+            __CFRunLoopDoSource1(rl, rlm, rls, msg, msg->msgh_size, &reply)
+        }
+            
+        //处理Blocks
+    __CFRunLoopDoBlocks(rl, rlm);
+        
+        //设置返回值
+    if (sourceHandledThisLoop && stopAfterHandle) {
+        retVal = kCFRunLoopRunHandledSource;
+        } else if (timeout_context->termTSR < mach_absolute_time()) {
+            retVal = kCFRunLoopRunTimedOut;
+    } else if (__CFRunLoopIsStopped(rl)) {
+            __CFRunLoopUnsetStopped(rl);
+        retVal = kCFRunLoopRunStopped;
+    } else if (rlm->_stopped) {
+        rlm->_stopped = false;
+        retVal = kCFRunLoopRunStopped;
+    } else if (__CFRunLoopModeIsEmpty(rl, rlm, previousMode)) {
+        retVal = kCFRunLoopRunFinished;
+    }
+    } while (0 == retVal);
+
+    return retVal;
+}
+
 /**
  
  runloop与线程的关系：
@@ -21,10 +110,41 @@
 
  如果Mode里没有任何Source0/Source1/Timer/Observer，RunLoop会立马退出
 
+ Source0
+ 触摸事件处理
+ performSelector:onThread:
+
+ Source1
+ 基于Port的线程间通信
+ 系统事件捕捉
+
+ Timers
+ NSTimer
+ performSelector:withObject:afterDelay:
+
+ Observers
+ 用于监听RunLoop的状态
+ UI刷新（BeforeWaiting）
+ Autorelease pool（BeforeWaiting）
  
  
  runloop运行逻辑：
- 
+ 1.通知Observers:进入runloop
+ 2.通知Observers:即将处理Timers
+ 3.通知Observers:即将处理Sources
+ 4.处理Blocks（如果存在）
+ 5.处理Source0（可能会再次处理Blocks）
+ 6.如果存在Source1，跳转至第8步
+ 7.通知Observers:开始休眠（等待消息唤醒）
+ 8.通知Observers:结束休眠（被某个消息唤醒）
+    8.1 处理Timer
+    8.2 处理GCD Async To Main Queue
+    8.3处理Sounce1
+ 9.处理Blocks（如果存在）
+ 10.根据前面执行结果，决定如何操作
+    10.1 回到第2步
+    10.2 推出runloop
+ 11.通知Observers:推出runloop
  
  
  runloop具体应用：
@@ -35,6 +155,21 @@
  
  
  Questions:
+ 1.RunLoop如何响应用户操作？具体流程是怎样的？
+ 首先由Source1捕捉到这个事件，即用户点击屏幕的时候，这个事件会交给Source1处理，Source1会把这个事件包装成事件队列Event Queue，然后由Source0处理
+
+ 2.RunLoop的基本作用
+ 保持程序的持续运行
+ 处理App中的各种事件（比如触摸事件、定时器事件等）
+ 节省CPU资源，提高程序性能：该做事时做事，该休息休息
+ 
+ 3.实现线程阻塞的方式
+ while(1)循环
+ RunLoop休眠
+ 
+ 4.RunLoop如何做到休眠？
+ 通过调用mach_msg给内核发送消息，达到真正休眠的目的，不干事情，不占用CPU资源
+
  
  */
 

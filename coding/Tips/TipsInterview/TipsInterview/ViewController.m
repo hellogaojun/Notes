@@ -36,7 +36,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [self.navigationController pushViewController:[[RunloopController alloc]init] animated:YES];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    RunloopController *vc = [sb instantiateViewControllerWithIdentifier:@"runloop"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

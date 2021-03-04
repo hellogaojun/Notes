@@ -87,9 +87,10 @@ void threadSave() {
     self.thread = [[GJThread alloc]initWithBlock:^{
         NSLog(@"run begin ------- %@",[NSThread currentThread]);
 
+        //往runloop中添加source/timer/observer
         [[NSRunLoop currentRunLoop] addPort:[NSPort new] forMode:NSDefaultRunLoopMode];
 
-        while (!weakSelf.isStoped) {
+        while (weakSelf && !weakSelf.isStoped) {
             //this method effectively begins an infinite loop that processes data from the run loop’s input sources and timers.
 //            [[NSRunLoop currentRunLoop] run];
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
@@ -109,17 +110,20 @@ void threadSave() {
 
 - (IBAction)stopThread:(id)sender {
     
+    //waitUntilDone设置为YES代表self.thread 执行完毕后，这个方法才会往下执行
+    [self performSelector:@selector(stop) onThread:self.thread withObject:nil waitUntilDone:YES];
+    
+}
+
+- (void)stop {
     self.stoped = YES;
     
     //停止runloop
     CFRunLoopStop(CFRunLoopGetCurrent());
     
     NSLog(@"stop ------- %@",[NSThread currentThread]);
-}
-
-- (void)stop {
-   
-    [self performSelector:@selector(stopThread:) onThread:self.thread withObject:nil waitUntilDone:NO];
+    
+    self.thread = nil;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -133,7 +137,8 @@ void threadSave() {
 - (void)dealloc {
     NSLog(@"%s",__func__);
     
-    [self stop];
+    [self stopThread:nil];
+
     
 }
 

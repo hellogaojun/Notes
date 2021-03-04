@@ -28,29 +28,12 @@
         <!--Runloop Controller-->
         <scene sceneID="FXs-5q-RtW">
             <objects>
-                <viewController id="k4h-3v-erv" customClass="RunloopController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="runloop" id="k4h-3v-erv" customClass="RunloopController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e1g-jl-7XE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUm-eK-UG7">
-                                <rect key="frame" x="100" y="144" width="79" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="G0k-3f-oR5"/>
-                                    <constraint firstAttribute="width" constant="79" id="Zic-t6-oM2"/>
-                                </constraints>
-                                <state key="normal" title="StopThread"/>
-                                <connections>
-                                    <action selector="stopThread:" destination="k4h-3v-erv" eventType="touchUpInside" id="8vd-TX-H3S"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sRH-b4-CE5"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="AUm-eK-UG7" firstAttribute="top" secondItem="sRH-b4-CE5" secondAttribute="top" constant="100" id="41m-8h-aCq"/>
-                            <constraint firstItem="AUm-eK-UG7" firstAttribute="leading" secondItem="sRH-b4-CE5" secondAttribute="leading" constant="100" id="5OB-N9-LtX"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPf-oJ-DP0" sceneMemberID="firstResponder"/>
@@ -60,7 +43,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Xaj-9V-bbh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BYv-Mb-ibl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="aWl-63-Ddt" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y7o-hd-4IO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -70,6 +52,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UXI-bK-WvR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYv-Mb-ibl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-736" y="42"/>
         </scene>

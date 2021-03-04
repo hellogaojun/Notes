@@ -23,6 +23,8 @@
 		84696A7825E8E032009945D2 /* load+initialize in Resources */ = {isa = PBXBuildFile; fileRef = 84696A7725E8E032009945D2 /* load+initialize */; };
 		84696A8225E8EC32009945D2 /* 关联对象.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84696A8125E8EC32009945D2 /* 关联对象.jpeg */; };
 		84696A8825E8FC1A009945D2 /* 关联对象Key的常见写法.png in Resources */ = {isa = PBXBuildFile; fileRef = 84696A8725E8FC1A009945D2 /* 关联对象Key的常见写法.png */; };
+		846EDF4F25F0EDFA000B4784 /* GJPermanentThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EDF4E25F0EDFA000B4784 /* GJPermanentThread.m */; };
+		846EDF5425F0F69F000B4784 /* runloop运行逻辑.png in Resources */ = {isa = PBXBuildFile; fileRef = 846EDF5325F0F69E000B4784 /* runloop运行逻辑.png */; };
 		8471191625EDE3D900596E34 /* 内存管理 in Resources */ = {isa = PBXBuildFile; fileRef = 8471191525EDE3D900596E34 /* 内存管理 */; };
 		8471191C25EDE68000596E34 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471191B25EDE68000596E34 /* Person.m */; };
 		8471192225EDE69100596E34 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471192125EDE69100596E34 /* Student.m */; };
@@ -88,6 +90,9 @@
 		84696A7725E8E032009945D2 /* load+initialize */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "load+initialize"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		84696A8125E8EC32009945D2 /* 关联对象.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "关联对象.jpeg"; sourceTree = "<group>"; };
 		84696A8725E8FC1A009945D2 /* 关联对象Key的常见写法.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关联对象Key的常见写法.png"; sourceTree = "<group>"; };
+		846EDF4D25F0EDFA000B4784 /* GJPermanentThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJPermanentThread.h; sourceTree = "<group>"; };
+		846EDF4E25F0EDFA000B4784 /* GJPermanentThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJPermanentThread.m; sourceTree = "<group>"; };
+		846EDF5325F0F69E000B4784 /* runloop运行逻辑.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "runloop运行逻辑.png"; sourceTree = "<group>"; };
 		8471191525EDE3D900596E34 /* 内存管理 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "内存管理"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8471191A25EDE68000596E34 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		8471191B25EDE68000596E34 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
@@ -213,6 +218,7 @@
 				84A4200D25ECF1CF00962E4C /* 消息转发.png */,
 				84A4200825ECF19600962E4C /* 动态方法解析.png */,
 				84A4200325ECF17100962E4C /* 消息发送.png */,
+				846EDF5325F0F69E000B4784 /* runloop运行逻辑.png */,
 				8467766E25EF3C9200A30D9F /* runloop中相关的类.png */,
 				8471192B25EE34DD00596E34 /* runloop */,
 				84A41FFB25ECDD7A00962E4C /* runtime */,
@@ -246,6 +252,8 @@
 				8471192125EDE69100596E34 /* Student.m */,
 				8467767625EF815100A30D9F /* GJThread.h */,
 				8467767725EF815100A30D9F /* GJThread.m */,
+				846EDF4D25F0EDFA000B4784 /* GJPermanentThread.h */,
+				846EDF4E25F0EDFA000B4784 /* GJPermanentThread.m */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -353,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8471191625EDE3D900596E34 /* 内存管理 in Resources */,
+				846EDF5425F0F69F000B4784 /* runloop运行逻辑.png in Resources */,
 				8471192725EE29F300596E34 /* 栈空间局部变量地址由高到低.png in Resources */,
 				84645E7525E7ACC100EC4186 /* setValueForKey.png in Resources */,
 				8468AB4525E4E72E002F8519 /* isa+superclass.png in Resources */,
@@ -399,6 +408,7 @@
 				84696A7025E8DF9A009945D2 /* Tool.m in Sources */,
 				84696A6A25E8DE15009945D2 /* Dog.m in Sources */,
 				8467767825EF815100A30D9F /* GJThread.m in Sources */,
+				846EDF4F25F0EDFA000B4784 /* GJPermanentThread.m in Sources */,
 				8471191C25EDE68000596E34 /* Person.m in Sources */,
 				84D9BFBA25E3547400CCA1A5 /* ViewController.m in Sources */,
 				84D9BFB425E3547400CCA1A5 /* AppDelegate.m in Sources */,
