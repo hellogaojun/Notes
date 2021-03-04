@@ -88,6 +88,25 @@ int32_t retVal = 0;
     return retVal;
 }
 
+//5种NSRunloopMode:
+
+//The mode to indicate an NSConnection object waiting for replies.
+NSConnectionReplyMode
+
+//A run loop should be set to this mode when waiting for input from a modal panel,
+//such as NSSavePanel or NSOpenPanel.
+NSModalPanelRunLoopMode
+
+//A run loop should be set to this mode when tracking events modally, such as a mouse-dragging loop.
+NSEventTrackingRunLoopMode
+
+//The mode to deal with input sources other than NSConnection objects.
+NSDefaultRunLoopMode
+
+//Objects added to a run loop using this value as the mode are monitored by all run loop modes that have been declared as a member of the set of “common" modes; see the description of CFRunLoopAddCommonMode for details.
+NSRunLoopCommonModes
+
+
 /**
  
  runloop与线程的关系：
