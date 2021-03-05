@@ -1,0 +1,107 @@
+
+//Block
+//ARC 环境
+
+//访问了auto变量：__NSMallocBlock
+void blockTest1() {
+    int age = 10;
+    static int height = 30;
+    void (^block)(int,int) = ^(int a,int b) {
+        NSLog(@"this is a block age:%d, height:%d",age,height);
+        NSLog(@"this is a block");
+    };
+    
+    age = 100;
+    height = 300;
+    
+    block(20,20);
+    
+    NSLog(@"%@",[block class]);//__NSMallocBlock__
+    NSLog(@"%@",[[block class] superclass]);//__NSMallocBlock
+    NSLog(@"%@",[[[block class] superclass] superclass]);//NSBlock
+    NSLog(@"%@",[[[[block class] superclass] superclass] superclass]);//NSObject
+    NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
+}
+
+//没有访问auto变量：__NSGlobalBlock
+void blockTest2() {
+    void (^block)(int,int) = ^(int a,int b) {
+        NSLog(@"this is a block");
+    };
+    
+    NSLog(@"%@",[block class]);// __NSGlobalBlock__
+    NSLog(@"%@",[[block class] superclass]);//__NSGlobalBlock
+    NSLog(@"%@",[[[block class] superclass] superclass]);//NSBlock
+    NSLog(@"%@",[[[[block class] superclass] superclass] superclass]);//NSObject
+    NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
+}
+
+//只访问了static变量：__NSGlobalBlock
+void blockTest3() {
+    static int a = 10;
+    void (^block)(void) = ^() {
+        NSLog(@"this is a block %d",a);
+    };
+    
+    NSLog(@"%@",[block class]);// __NSGlobalBlock__
+    NSLog(@"%@",[[block class] superclass]);//__NSGlobalBlock
+    NSLog(@"%@",[[[block class] superclass] superclass]);//NSBlock
+    NSLog(@"%@",[[[[block class] superclass] superclass] superclass]);//NSObject
+    NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
+}
+
+
+/*
+ block本质：
+ block本质上也是一个OC对象，它内部也有个isa指针
+ block是封装了函数调用以及函数调用环境的OC对象
+ 
+ block变量捕获：
+ //局部变量访问
+ block访问auto变量，捕获到block内部，值传递
+ block访问static变量，捕获到block内部，指针传递
+ 
+ //全局变量访问
+ 直接访问，不存在捕获这个概念
+ 
+ 
+ blcok类型：
+ block有3种类型，可以通过调用class方法或者isa指针查看具体类型，最终都是继承自NSBlock类型
+ __NSGlobalBlock__ （ _NSConcreteGlobalBlock ）
+ __NSStackBlock__ （ _NSConcreteStackBlock ）
+ __NSMallocBlock__ （ _NSConcreteMallocBlock ）
+ 
+ 参考图block类型.png
+ 
+ block的copy
+ 在ARC环境下，编译器会根据情况自动将栈上的block复制到堆上，比如以下情况
+ block作为函数返回值时
+ 将block赋值给__strong指针时
+ block作为Cocoa API中方法名含有usingBlock的方法参数时
+ block作为GCD API的方法参数时
+
+ 
+ block访问对象类型的auto变量：
+ 当block内部访问了对象类型的auto变量时
+ 如果block是在栈上，将不会对auto变量产生强引用
+
+ 如果block被拷贝到堆上
+ 会调用block内部的copy函数
+ copy函数内部会调用_Block_object_assign函数
+ _Block_object_assign函数会根据auto变量的修饰符（__strong、__weak、__unsafe_unretained）做出相应的操作，形成强引用（retain）或者弱引用
+
+ 如果block从堆上移除
+ 会调用block内部的dispose函数
+ dispose函数内部会调用_Block_object_dispose函数
+ _Block_object_dispose函数会自动释放引用的auto变量（release）
+
+ 
+ __block:(待完善)
+ 编译器会将__block变量包装成一个对象
+
+ 
+ 
+ */
+
+
+

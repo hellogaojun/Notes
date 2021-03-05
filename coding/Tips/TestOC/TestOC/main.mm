@@ -88,10 +88,63 @@ void test3() {
     NSLog(@"end");
 }
 
+//ARC 环境
+
+//访问了auto变量：__NSMallocBlock
+void blockTest1() {
+    int age = 10;
+    static int height = 30;
+    void (^block)(int,int) = ^(int a,int b) {
+        NSLog(@"this is a block age:%d, height:%d",age,height);
+        NSLog(@"this is a block");
+    };
+    
+    age = 100;
+    height = 300;
+    
+    block(20,20);
+    
+    NSLog(@"%@",[block class]);//__NSMallocBlock__
+    NSLog(@"%@",[[block class] superclass]);//__NSMallocBlock
+    NSLog(@"%@",[[[block class] superclass] superclass]);//NSBlock
+    NSLog(@"%@",[[[[block class] superclass] superclass] superclass]);//NSObject
+    NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
+}
+
+//没有访问auto变量：__NSGlobalBlock
+void blockTest2() {
+    void (^block)(int,int) = ^(int a,int b) {
+        NSLog(@"this is a block");
+    };
+    
+    NSLog(@"%@",[block class]);// __NSGlobalBlock__
+    NSLog(@"%@",[[block class] superclass]);//__NSGlobalBlock
+    NSLog(@"%@",[[[block class] superclass] superclass]);//NSBlock
+    NSLog(@"%@",[[[[block class] superclass] superclass] superclass]);//NSObject
+    NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
+}
+
+//只访问了static变量：__NSGlobalBlock
+void blockTest3() {
+    static int a = 10;
+    void (^block)(void) = ^() {
+        NSLog(@"this is a block %d",a);
+    };
+    
+    NSLog(@"%@",[block class]);// __NSGlobalBlock__
+    NSLog(@"%@",[[block class] superclass]);//__NSGlobalBlock
+    NSLog(@"%@",[[[block class] superclass] superclass]);//NSBlock
+    NSLog(@"%@",[[[[block class] superclass] superclass] superclass]);//NSObject
+    NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
+//        blockTest1();
 
+        Person *p = [[Person alloc]init];
+        NSLog(@"end");
     }
     return 0;
 }

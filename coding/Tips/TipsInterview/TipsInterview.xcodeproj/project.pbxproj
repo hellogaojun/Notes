@@ -14,7 +14,6 @@
 		84645E8625E7B2A900EC4186 /* Animal+one.m in Sources */ = {isa = PBXBuildFile; fileRef = 84645E8525E7B2A900EC4186 /* Animal+one.m */; };
 		84645E9225E7B38A00EC4186 /* Animal+two.m in Sources */ = {isa = PBXBuildFile; fileRef = 84645E9125E7B38A00EC4186 /* Animal+two.m */; };
 		8467766A25EF2A3D00A30D9F /* RunloopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467766925EF2A3D00A30D9F /* RunloopController.m */; };
-		8467766F25EF3C9200A30D9F /* runloop中相关的类.png in Resources */ = {isa = PBXBuildFile; fileRef = 8467766E25EF3C9200A30D9F /* runloop中相关的类.png */; };
 		8467767825EF815100A30D9F /* GJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467767725EF815100A30D9F /* GJThread.m */; };
 		8468AB4525E4E72E002F8519 /* isa+superclass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8468AB4425E4E72E002F8519 /* isa+superclass.png */; };
 		84696A6025E8A135009945D2 /* Category in Resources */ = {isa = PBXBuildFile; fileRef = 84696A5F25E8A135009945D2 /* Category */; };
@@ -23,6 +22,8 @@
 		84696A7825E8E032009945D2 /* load+initialize in Resources */ = {isa = PBXBuildFile; fileRef = 84696A7725E8E032009945D2 /* load+initialize */; };
 		84696A8225E8EC32009945D2 /* 关联对象.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84696A8125E8EC32009945D2 /* 关联对象.jpeg */; };
 		84696A8825E8FC1A009945D2 /* 关联对象Key的常见写法.png in Resources */ = {isa = PBXBuildFile; fileRef = 84696A8725E8FC1A009945D2 /* 关联对象Key的常见写法.png */; };
+		846D640D25F21E4500803958 /* block in Resources */ = {isa = PBXBuildFile; fileRef = 846D640C25F21E4500803958 /* block */; };
+		846D641525F21F7400803958 /* block类型.png in Resources */ = {isa = PBXBuildFile; fileRef = 846D641425F21F7400803958 /* block类型.png */; };
 		846EDF4F25F0EDFA000B4784 /* GJPermanentThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EDF4E25F0EDFA000B4784 /* GJPermanentThread.m */; };
 		846EDF5425F0F69F000B4784 /* runloop运行逻辑.png in Resources */ = {isa = PBXBuildFile; fileRef = 846EDF5325F0F69E000B4784 /* runloop运行逻辑.png */; };
 		8471191625EDE3D900596E34 /* 内存管理 in Resources */ = {isa = PBXBuildFile; fileRef = 8471191525EDE3D900596E34 /* 内存管理 */; };
@@ -78,7 +79,6 @@
 		84645E9125E7B38A00EC4186 /* Animal+two.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Animal+two.m"; sourceTree = "<group>"; };
 		8467766825EF2A3D00A30D9F /* RunloopController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopController.h; sourceTree = "<group>"; };
 		8467766925EF2A3D00A30D9F /* RunloopController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopController.m; sourceTree = "<group>"; };
-		8467766E25EF3C9200A30D9F /* runloop中相关的类.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "runloop中相关的类.png"; path = "../../../../../../../runloop中相关的类.png"; sourceTree = "<group>"; };
 		8467767625EF815100A30D9F /* GJThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJThread.h; sourceTree = "<group>"; };
 		8467767725EF815100A30D9F /* GJThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJThread.m; sourceTree = "<group>"; };
 		8468AB4425E4E72E002F8519 /* isa+superclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "isa+superclass.png"; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		84696A7725E8E032009945D2 /* load+initialize */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "load+initialize"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		84696A8125E8EC32009945D2 /* 关联对象.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "关联对象.jpeg"; sourceTree = "<group>"; };
 		84696A8725E8FC1A009945D2 /* 关联对象Key的常见写法.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关联对象Key的常见写法.png"; sourceTree = "<group>"; };
+		846D640C25F21E4500803958 /* block */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = block; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		846D641425F21F7400803958 /* block类型.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block类型.png"; sourceTree = "<group>"; };
 		846EDF4D25F0EDFA000B4784 /* GJPermanentThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJPermanentThread.h; sourceTree = "<group>"; };
 		846EDF4E25F0EDFA000B4784 /* GJPermanentThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJPermanentThread.m; sourceTree = "<group>"; };
 		846EDF5325F0F69E000B4784 /* runloop运行逻辑.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "runloop运行逻辑.png"; sourceTree = "<group>"; };
@@ -219,7 +221,8 @@
 				84A4200825ECF19600962E4C /* 动态方法解析.png */,
 				84A4200325ECF17100962E4C /* 消息发送.png */,
 				846EDF5325F0F69E000B4784 /* runloop运行逻辑.png */,
-				8467766E25EF3C9200A30D9F /* runloop中相关的类.png */,
+				846D641425F21F7400803958 /* block类型.png */,
+				846D640C25F21E4500803958 /* block */,
 				8471192B25EE34DD00596E34 /* runloop */,
 				84A41FFB25ECDD7A00962E4C /* runtime */,
 				8471191525EDE3D900596E34 /* 内存管理 */,
@@ -360,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846D640D25F21E4500803958 /* block in Resources */,
 				8471191625EDE3D900596E34 /* 内存管理 in Resources */,
 				846EDF5425F0F69F000B4784 /* runloop运行逻辑.png in Resources */,
 				8471192725EE29F300596E34 /* 栈空间局部变量地址由高到低.png in Resources */,
@@ -376,9 +380,9 @@
 				84696A6025E8A135009945D2 /* Category in Resources */,
 				84D9BFBF25E3547700CCA1A5 /* Assets.xcassets in Resources */,
 				84A4200425ECF17100962E4C /* 消息发送.png in Resources */,
+				846D641525F21F7400803958 /* block类型.png in Resources */,
 				84D9BFBD25E3547400CCA1A5 /* Main.storyboard in Resources */,
 				84645E7A25E7ACC600EC4186 /* valueForKey.png in Resources */,
-				8467766F25EF3C9200A30D9F /* runloop中相关的类.png in Resources */,
 				84696A8225E8EC32009945D2 /* 关联对象.jpeg in Resources */,
 				84A4200E25ECF1CF00962E4C /* 消息转发.png in Resources */,
 			);

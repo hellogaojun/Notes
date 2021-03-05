@@ -19,4 +19,8 @@
 
 - (id)copyWithZone:(nullable NSZone *)zone {return nil;}
 
+- (void)dealloc {
+    NSLog(@"Person dealloc");
+}
+
 @end
