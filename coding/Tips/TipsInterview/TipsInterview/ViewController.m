@@ -13,6 +13,8 @@
 #import "Objective-C/Student.h"
 #import "RunloopController.h"
 
+#import "TipsInterview-Swift.h"
+
 @interface ViewController ()
 
 @property (nonatomic, strong) GJPerson *person1;
@@ -49,6 +51,13 @@
     [a run];
     
     Dog *d2 = [Dog new];
+}
+
+- (void)testSwift {
+    GJCar *c = [[GJCar alloc]initWithPrice:99 band:@"BWM"];
+    [c run];
+    
+    [GJCar run];
 }
 
 #pragma mark - KVO

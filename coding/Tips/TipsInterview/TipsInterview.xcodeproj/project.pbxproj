@@ -31,6 +31,7 @@
 		8471192225EDE69100596E34 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471192125EDE69100596E34 /* Student.m */; };
 		8471192725EE29F300596E34 /* 栈空间局部变量地址由高到低.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471192625EE29F300596E34 /* 栈空间局部变量地址由高到低.png */; };
 		8471192C25EE34DD00596E34 /* runloop in Resources */ = {isa = PBXBuildFile; fileRef = 8471192B25EE34DD00596E34 /* runloop */; };
+		849300C125FF765E00E72FBC /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849300C025FF765E00E72FBC /* Car.swift */; };
 		84A41FFC25ECDD7A00962E4C /* runtime in Resources */ = {isa = PBXBuildFile; fileRef = 84A41FFB25ECDD7A00962E4C /* runtime */; };
 		84A4200425ECF17100962E4C /* 消息发送.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A4200325ECF17100962E4C /* 消息发送.png */; };
 		84A4200925ECF19600962E4C /* 动态方法解析.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A4200825ECF19600962E4C /* 动态方法解析.png */; };
@@ -102,6 +103,8 @@
 		8471192125EDE69100596E34 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8471192625EE29F300596E34 /* 栈空间局部变量地址由高到低.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "栈空间局部变量地址由高到低.png"; sourceTree = "<group>"; };
 		8471192B25EE34DD00596E34 /* runloop */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = runloop; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		849300BF25FF765E00E72FBC /* TipsInterview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipsInterview-Bridging-Header.h"; sourceTree = "<group>"; };
+		849300C025FF765E00E72FBC /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		84A41FFB25ECDD7A00962E4C /* runtime */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = runtime; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		84A4200325ECF17100962E4C /* 消息发送.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息发送.png"; sourceTree = "<group>"; };
 		84A4200825ECF19600962E4C /* 动态方法解析.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "动态方法解析.png"; sourceTree = "<group>"; };
@@ -154,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		849300BE25FF752B00E72FBC /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				849300C025FF765E00E72FBC /* Car.swift */,
+				849300BF25FF765E00E72FBC /* TipsInterview-Bridging-Header.h */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		84D9BFA625E3547400CCA1A5 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 		84D9BFB125E3547400CCA1A5 /* TipsInterview */ = {
 			isa = PBXGroup;
 			children = (
+				849300BE25FF752B00E72FBC /* Swift */,
 				84D9BFEA25E3549D00CCA1A5 /* Objective-C */,
 				84D9BFB225E3547400CCA1A5 /* AppDelegate.h */,
 				84D9BFB325E3547400CCA1A5 /* AppDelegate.m */,
@@ -327,6 +340,7 @@
 				TargetAttributes = {
 					84D9BFAE25E3547400CCA1A5 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					84D9BFC925E3547700CCA1A5 = {
 						CreatedOnToolsVersion = 12.2;
@@ -419,6 +433,7 @@
 				84D9BFC525E3547700CCA1A5 /* main.m in Sources */,
 				84645E8025E7B28400EC4186 /* Animal.m in Sources */,
 				84645E9225E7B38A00EC4186 /* Animal+two.m in Sources */,
+				849300C125FF765E00E72FBC /* Car.swift in Sources */,
 				84645E8625E7B2A900EC4186 /* Animal+one.m in Sources */,
 				84D9BFB725E3547400CCA1A5 /* SceneDelegate.m in Sources */,
 				84BE570025E65E6A00AD8CAA /* GJPerson.m in Sources */,
@@ -595,6 +610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY6Q9GBZHX;
 				INFOPLIST_FILE = TipsInterview/Info.plist;
@@ -604,6 +620,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipsInterview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipsInterview/Swift/TipsInterview-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -613,6 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY6Q9GBZHX;
 				INFOPLIST_FILE = TipsInterview/Info.plist;
@@ -622,6 +642,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipsInterview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipsInterview/Swift/TipsInterview-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -629,6 +651,7 @@
 		84D9BFE225E3547700CCA1A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY6Q9GBZHX;
@@ -649,6 +672,7 @@
 		84D9BFE325E3547700CCA1A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY6Q9GBZHX;
@@ -669,6 +693,7 @@
 		84D9BFE525E3547700CCA1A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY6Q9GBZHX;
 				INFOPLIST_FILE = TipsInterviewUITests/Info.plist;
@@ -687,6 +712,7 @@
 		84D9BFE625E3547700CCA1A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY6Q9GBZHX;
 				INFOPLIST_FILE = TipsInterviewUITests/Info.plist;

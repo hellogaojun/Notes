@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GJPerson : NSObject
+@interface GJPerson : NSObject<NSCopying>
 
 @property (nonatomic, copy) NSString *name;
 
