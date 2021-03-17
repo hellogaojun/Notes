@@ -5,7 +5,7 @@ workspace 'Tips'
 def commonPods
     pod 'AFNetworking'
     pod 'MJExtension'
-    pod 'YYKit'
+#    pod 'YYKit'
     pod 'MJRefresh'
     pod 'SDWebImage'
     pod 'PureLayout'
@@ -15,6 +15,16 @@ def commonPods
     pod 'MagicalRecord'
     pod 'FMDB'
     pod 'GZIP'
+    
+    pod 'YYModel'
+#    pod 'YYCache'
+#    pod 'YYImage'
+#    pod 'YYText'
+#    pod 'YYWebImage'
+#    pod 'YYDispatchQueuePool'
+#    pod 'YYAsyncLayer'
+#    pod 'YYCategories'
+    
   end
 
 target 'TipsThirdPart' do

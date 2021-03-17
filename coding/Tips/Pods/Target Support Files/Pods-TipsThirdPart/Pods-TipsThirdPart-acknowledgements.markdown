@@ -239,7 +239,7 @@ THE SOFTWARE.
 
 
 
-## YYKit
+## YYModel
 
 The MIT License (MIT)
 

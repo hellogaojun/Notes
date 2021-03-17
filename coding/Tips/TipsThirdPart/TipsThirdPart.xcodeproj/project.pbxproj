@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E1B63B636F0411AC0F52744 /* libPods-TipsThirdPart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C4A0BCF78B428F005EF077 /* libPods-TipsThirdPart.a */; };
+		8462D8C92601E904007BA18F /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8462D8C82601E904007BA18F /* Model.m */; };
 		847FB64725C2CD43000FFF20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FB64625C2CD43000FFF20 /* AppDelegate.m */; };
 		847FB64D25C2CD43000FFF20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FB64C25C2CD43000FFF20 /* ViewController.m */; };
 		847FB65025C2CD43000FFF20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847FB64E25C2CD43000FFF20 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		6B5D3EC3202918263AEF056D /* Pods-TipsThirdPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipsThirdPart.debug.xcconfig"; path = "Target Support Files/Pods-TipsThirdPart/Pods-TipsThirdPart.debug.xcconfig"; sourceTree = "<group>"; };
 		7EE534AFFED4E1CCD29680E4 /* Pods-TipsThirdPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipsThirdPart.release.xcconfig"; path = "Target Support Files/Pods-TipsThirdPart/Pods-TipsThirdPart.release.xcconfig"; sourceTree = "<group>"; };
+		8462D8C72601E904007BA18F /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		8462D8C82601E904007BA18F /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		847FB64225C2CD43000FFF20 /* TipsThirdPart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsThirdPart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847FB64525C2CD43000FFF20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		847FB64625C2CD43000FFF20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				847FB64625C2CD43000FFF20 /* AppDelegate.m */,
 				847FB64B25C2CD43000FFF20 /* ViewController.h */,
 				847FB64C25C2CD43000FFF20 /* ViewController.m */,
+				8462D8C72601E904007BA18F /* Model.h */,
+				8462D8C82601E904007BA18F /* Model.m */,
 				847FB64E25C2CD43000FFF20 /* Main.storyboard */,
 				847FB65125C2CD45000FFF20 /* Assets.xcassets */,
 				847FB65325C2CD45000FFF20 /* LaunchScreen.storyboard */,
@@ -333,6 +338,7 @@
 				847FB64D25C2CD43000FFF20 /* ViewController.m in Sources */,
 				847FB64725C2CD43000FFF20 /* AppDelegate.m in Sources */,
 				847FB65825C2CD45000FFF20 /* main.m in Sources */,
+				8462D8C92601E904007BA18F /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
