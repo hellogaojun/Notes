@@ -31,6 +31,7 @@
 		8471192225EDE69100596E34 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471192125EDE69100596E34 /* Student.m */; };
 		8471192725EE29F300596E34 /* 栈空间局部变量地址由高到低.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471192625EE29F300596E34 /* 栈空间局部变量地址由高到低.png */; };
 		8471192C25EE34DD00596E34 /* runloop in Resources */ = {isa = PBXBuildFile; fileRef = 8471192B25EE34DD00596E34 /* runloop */; };
+		847DAA8F2611CBCE00ED56B1 /* KeyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DAA8E2611CBCE00ED56B1 /* KeyObject.m */; };
 		849300C125FF765E00E72FBC /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849300C025FF765E00E72FBC /* Car.swift */; };
 		84A41FFC25ECDD7A00962E4C /* runtime in Resources */ = {isa = PBXBuildFile; fileRef = 84A41FFB25ECDD7A00962E4C /* runtime */; };
 		84A4200425ECF17100962E4C /* 消息发送.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A4200325ECF17100962E4C /* 消息发送.png */; };
@@ -103,6 +104,8 @@
 		8471192125EDE69100596E34 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8471192625EE29F300596E34 /* 栈空间局部变量地址由高到低.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "栈空间局部变量地址由高到低.png"; sourceTree = "<group>"; };
 		8471192B25EE34DD00596E34 /* runloop */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = runloop; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		847DAA8D2611CBCE00ED56B1 /* KeyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyObject.h; sourceTree = "<group>"; };
+		847DAA8E2611CBCE00ED56B1 /* KeyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyObject.m; sourceTree = "<group>"; };
 		849300BF25FF765E00E72FBC /* TipsInterview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipsInterview-Bridging-Header.h"; sourceTree = "<group>"; };
 		849300C025FF765E00E72FBC /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		84A41FFB25ECDD7A00962E4C /* runtime */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = runtime; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -270,6 +273,8 @@
 				8467767725EF815100A30D9F /* GJThread.m */,
 				846EDF4D25F0EDFA000B4784 /* GJPermanentThread.h */,
 				846EDF4E25F0EDFA000B4784 /* GJPermanentThread.m */,
+				847DAA8D2611CBCE00ED56B1 /* KeyObject.h */,
+				847DAA8E2611CBCE00ED56B1 /* KeyObject.m */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				84645E8625E7B2A900EC4186 /* Animal+one.m in Sources */,
 				84D9BFB725E3547400CCA1A5 /* SceneDelegate.m in Sources */,
 				84BE570025E65E6A00AD8CAA /* GJPerson.m in Sources */,
+				847DAA8F2611CBCE00ED56B1 /* KeyObject.m in Sources */,
 				8467766A25EF2A3D00A30D9F /* RunloopController.m in Sources */,
 				8471192225EDE69100596E34 /* Student.m in Sources */,
 			);

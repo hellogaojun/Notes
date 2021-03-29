@@ -13,6 +13,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let cats = ["Tabby","Snow","Cycloman"];
+        func wearHat(cat: String) -> String {
+            return cat + "wear hat"
+        }
+        
+        let catsWithHat = cats.map(wearHat)
+        print(catsWithHat)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -11,6 +11,7 @@
 #import "Objective-C/Animal+one.h"
 #import "Objective-C/Dog.h"
 #import "Objective-C/Student.h"
+#import "Objective-C/KeyObject.h"
 #import "RunloopController.h"
 
 #import "TipsInterview-Swift.h"

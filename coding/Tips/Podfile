@@ -17,13 +17,13 @@ def commonPods
     pod 'GZIP'
     
     pod 'YYModel'
-#    pod 'YYCache'
-#    pod 'YYImage'
-#    pod 'YYText'
+    pod 'YYCache'
+    pod 'YYImage'
+    pod 'YYText'
 #    pod 'YYWebImage'
 #    pod 'YYDispatchQueuePool'
 #    pod 'YYAsyncLayer'
-#    pod 'YYCategories'
+    pod 'YYCategories'
     
   end
 

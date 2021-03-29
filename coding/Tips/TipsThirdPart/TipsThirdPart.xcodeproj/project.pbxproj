@@ -520,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipsThirdPart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = all;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -539,6 +540,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GJ.TipsThirdPart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = all;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
