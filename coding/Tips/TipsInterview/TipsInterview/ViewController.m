@@ -15,8 +15,9 @@
 #import "RunloopController.h"
 
 #import "TipsInterview-Swift.h"
+#import <CoreMedia/CoreMedia.h>
 
-@interface ViewController ()
+@interface ViewController ()<CAMediaTiming>
 
 @property (nonatomic, strong) GJPerson *person1;
 @property (nonatomic, strong) GJPerson *person2;
@@ -44,6 +45,59 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - ProtocolProperty
+
+- (void)testProtocolProperty {
+    self.speed = 1;
+    NSLog(@"speed:%f",self.speed);
+}
+
+@synthesize speed = _speed;
+
+- (void)setSpeed:(float)speed {
+    _speed = speed;
+}
+
+- (float)speed {
+    return _speed;
+}
+
+#pragma mark - Thread
+
+//dispatch_semaphore模拟dispatch_group效果
+- (void)testSemphore {
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+    __block BOOL res1,res2,res3;
+    
+    dispatch_block_t signalBlock = ^{
+        if (res1 & res2 & res3) {
+            dispatch_semaphore_signal(sem);
+        }
+    };
+    dispatch_async(queue, ^{
+        NSLog(@"1111111---%@",[NSThread currentThread]);
+        res1 = 1;
+        signalBlock();
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"2222222---%@",[NSThread currentThread]);
+        res2 = 1;
+        signalBlock();
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"3333333---%@",[NSThread currentThread]);
+        res3 = 1;
+
+        signalBlock();
+    });
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"main----end");
+    });
+}
+
+#pragma mark - InitializeAndLoad
 
 - (void)testInitializeAndLoad {
     Dog *d = [Dog new];
@@ -53,6 +107,8 @@
     
     Dog *d2 = [Dog new];
 }
+
+#pragma mark - Swift
 
 - (void)testSwift {
     GJCar *c = [[GJCar alloc]initWithPrice:99 band:@"BWM"];

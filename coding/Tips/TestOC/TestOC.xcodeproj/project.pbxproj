@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8466D04226141CDB003A3AF1 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 8466D04126141CDB003A3AF1 /* Test.m */; };
 		84696A5C25E89BC2009945D2 /* Person+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 84696A5B25E89BC2009945D2 /* Person+Test.m */; };
 		84D9C04025E3A08B00CCA1A5 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C03925E3A08B00CCA1A5 /* Student.m */; };
 		84D9C04125E3A08B00CCA1A5 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C03A25E3A08B00CCA1A5 /* Person.m */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		84645E5B25E77F4D00EC4186 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
+		8466D04026141CDB003A3AF1 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		8466D04126141CDB003A3AF1 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		84696A5A25E89BC2009945D2 /* Person+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Test.h"; sourceTree = "<group>"; };
 		84696A5B25E89BC2009945D2 /* Person+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Test.m"; sourceTree = "<group>"; };
 		84696A5E25E89C70009945D2 /* Person+Test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Person+Test.cpp"; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				84D9C03825E3A08B00CCA1A5 /* Student.cpp */,
 				84D9C03E25E3A08B00CCA1A5 /* Student.h */,
 				84D9C03925E3A08B00CCA1A5 /* Student.m */,
+				8466D04026141CDB003A3AF1 /* Test.h */,
+				8466D04126141CDB003A3AF1 /* Test.m */,
 			);
 			path = TestOC;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8466D04226141CDB003A3AF1 /* Test.m in Sources */,
 				84D9C04125E3A08B00CCA1A5 /* Person.m in Sources */,
 				84D9C04225E3A08B00CCA1A5 /* main.mm in Sources */,
 				84696A5C25E89BC2009945D2 /* Person+Test.m in Sources */,

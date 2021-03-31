@@ -10,6 +10,7 @@
 #import "Person.h"
 #import "Student.h"
 #import "MJClassInfo.h"
+#import "Test.h"
 
 //NSObject对应的C++代码
 struct NSObject_IMPL {
@@ -143,8 +144,12 @@ int main(int argc, const char * argv[]) {
         // insert code here...
 //        blockTest1();
 
-        Person *p = [[Person alloc]init];
-        NSLog(@"end");
+//        Person *p = [[Person alloc]init];
+//        NSLog(@"end");
+        
+        Test *t = [Test new];
+        t.name = @"test";
+        NSLog(@"name:%@",t.name);
     }
     return 0;
 }
