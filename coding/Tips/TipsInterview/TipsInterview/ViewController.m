@@ -45,6 +45,31 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)testBlock {
+    Person *p = [[Person alloc]init];
+    
+    __weak Person *weakP = p;
+    //case1:
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"1 ====== %@",p);
+//
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            NSLog(@"2 ====== %@",weakP);
+//        });
+//    });
+    
+    //case2:
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"1 ====== %@",weakP);
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"2 ====== %@",p);
+        });
+    });
+    
+    NSLog(@"testBlock");
+}
+
 #pragma mark - ProtocolProperty
 
 - (void)testProtocolProperty {

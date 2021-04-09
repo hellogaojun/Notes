@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         p.eat();
         p.run();
         print(p.age)
+        
+        Dispatch
     }
     
     //MARK: test

@@ -91,7 +91,7 @@ void test3() {
 
 //ARC 环境
 
-//访问了auto变量：__NSMallocBlock
+//访问了auto变量：__NSMallocBlock，在MRC环境下是__NSStackBlock
 void blockTest1() {
     int age = 10;
     static int height = 30;
@@ -139,6 +139,59 @@ void blockTest3() {
     NSLog(@"%@",[[[[[block class] superclass] superclass] superclass] superclass]);//(null)
 }
 
+/**
+ 
+struct __block_impl {
+  void *isa;//isa指针
+  int Flags;
+  int Reserved;
+  void *FuncPtr;//block封装的函数指针
+};
+
+struct __main_block_desc_0 {
+  size_t reserved;
+  size_t Block_size;//保存block的大小
+};
+
+struct __main_block_impl_0 {
+  struct __block_impl impl;
+  struct __main_block_desc_0* Desc;
+  int age;//捕获的外部变量
+    
+    //构造器
+  __main_block_impl_0(void *fp, struct __main_block_desc_0 *desc, int _age, int flags=0) : age(_age) {
+    impl.isa = &_NSConcreteStackBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+
+void simulateBlockStruct() {
+    int age = 10;
+    void (^block)(int,int) = ^(int a,int b) {
+        NSLog(@"this is a block age:%d",age);
+        NSLog(@"this is a block");
+    };
+    
+    struct __main_block_impl_0 *block_struct = (__bridge struct __main_block_impl_0 *)block;
+    
+    block(10,10);
+    
+//    block_struct->impl.FuncPtr(10,10);
+}
+
+*/
+
+
+void (^block)(void);
+void testBlock() {
+    int age = 10;
+    block = ^{
+        NSLog(@"block-------%d",age);
+    };
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
@@ -147,9 +200,20 @@ int main(int argc, const char * argv[]) {
 //        Person *p = [[Person alloc]init];
 //        NSLog(@"end");
         
-        Test *t = [Test new];
-        t.name = @"test";
-        NSLog(@"name:%@",t.name);
+//        Test *t = [Test new];
+//        t.name = @"test";
+//        NSLog(@"name:%@",t.name);
+        
+//        testBlock();
+//        block();
+        
+        __block int age = 10;
+        __block NSObject *obj = [NSObject new];
+        void (^block)(void) = ^{
+            age = 20;
+            obj = nil;
+            NSLog(@"age:%d",age);
+        };
     }
     return 0;
 }
